@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beholder High</title>
+	
+	<!-- Style Import -->
+	<!--<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />-->
+    <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <!-- Polyfill Web Components support for older browsers -->
+	<script src="js/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+	<!-- Import Charactar -->
+	<link rel="import" href="components/characters/beholder.html">
+
+	<!-- Import Environments -->
+	<link rel="import" href="components/environment/bg-stage.html">
+	<link rel="import" href="components/environment/text-block.html">
+	<link rel="import" href="components/environment/select-box.html">
+
+</head>
+<body>
+	<core-ajax
+	    auto
+	    url="http://gdata.youtube.com/feeds/api/videos/"
+	    params='{"alt":"json", "q":"chrome"}'
+	    handleAs="json"
+    	on-core-response="{{handleResponse}}">
+    </core-ajax>
+	<beholder-container beholder="siri" exp="happy" pos="center" animation="fadeInLeft"></beholder-container>
+	<bg-stage bg="Gym"></bg-stage>
+	<text-block story="Story Text Example"></text-block>
+	<select-box text="Button" link="http://google.com"></select-box>
+</body>
+</html>

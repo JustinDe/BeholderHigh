@@ -1,0 +1,37 @@
+<link rel="import" href="../../js/polymer/polymer.html">
+
+<dom-module id="select-box">
+
+  <template>
+    <a href="{{link}}">{{text}}</a>
+  </template>
+
+  <script>
+    Polymer({
+      is: "select-box",
+      properties: {
+        text: {
+          type: String,
+          value: "Button Default",
+        },
+        link: {
+          type: String,
+          value: "http://google.com",
+        }
+      },
+      ready : function() {
+        document.querySelector('select-box').classList.add("next");
+      }
+    });
+  </script>
+  <!--
+  select-box API
+  
+  text:
+    Free text for what ever is fed into the story.
+
+  link:
+    Free text for what is fed as the connecting link
+
+  -->
+</dom-module>
