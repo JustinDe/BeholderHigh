@@ -1,1 +1,0 @@
-A rewrite of Beholder High in Polymer
