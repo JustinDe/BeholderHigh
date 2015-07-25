@@ -22,16 +22,9 @@
 
 </head>
 <body>
-	<core-ajax
-	    auto
-	    url="http://gdata.youtube.com/feeds/api/videos/"
-	    params='{"alt":"json", "q":"chrome"}'
-	    handleAs="json"
-    	on-core-response="{{handleResponse}}">
-    </core-ajax>
 	<beholder-container beholder="siri" exp="happy" pos="center" animation="fadeInLeft"></beholder-container>
 	<bg-stage bg="Gym"></bg-stage>
 	<text-block story="Story Text Example"></text-block>
-	<select-box text="Button" link="http://google.com"></select-box>
+	<select-box text="Button" link="http://google.com"></select-box>	
 </body>
 </html>

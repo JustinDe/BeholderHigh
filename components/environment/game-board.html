@@ -1,0 +1,42 @@
+<link rel="import" href="../../js/polymer/polymer.html">
+<link rel="import" href="../../components/core-ajax/core-ajax.html">
+
+<dom-module id="game-board">
+
+  <template>
+    <core-ajax
+      auto
+      url="../../json/script.json"
+      params='{"alt":"json", "q":"chrome"}'
+      handleAs="json"
+      on-core-response="{{handleResponse}}"
+      id="storyJson">
+    </core-ajax>
+    <section>{{story.D1S1-0.bg}}</section>
+  </template>
+
+  <script>
+    Polymer({
+      is: "game-board",
+      properties: {
+        story: [],
+        handleResponse: function(e){
+          this.story = e.detail.response;
+        }
+      },
+      ready : function() {
+        this.$.storyJson.go();
+      }
+    });
+  </script>
+  <!--
+  select-box API
+  
+  text:
+    Free text for what ever is fed into the story.
+
+  link:
+    Free text for what is fed as the connecting link
+
+  -->
+</dom-module>
