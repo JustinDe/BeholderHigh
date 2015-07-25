@@ -1,0 +1,62 @@
+<!-- Import Polymer -->
+<link rel="import" href="../../js/polymer/polymer.html">
+
+<dom-module id="beholder-mox">
+
+  <template>
+    <img src="{{expImg}}">
+  </template>
+
+  <script>
+    Polymer({
+      is: "beholder-mox",
+      properties: {
+        exp: {
+          type: String,
+          value: "neutral",
+        },
+        expImg: {
+          type: String,
+          computed: "buildImg(exp)" //calls the buildImg function and concats img path and {{exp}} value
+        },
+        pos: {
+          type: String
+        },
+        animation: {
+          type: String
+        },
+      },
+      
+      buildImg : function(exp) {
+        return "images/char/mox/mox-"+ exp +".png";
+      },
+
+      ready : function() {
+        document.querySelector('beholder-mox').classList.add("char");
+        document.querySelector('beholder-mox').classList.add("animated");
+        document.querySelector('beholder-mox').classList.add(this.pos);
+        document.querySelector('beholder-mox').classList.add(this.animation);
+      }
+    });
+  </script>
+  <!--
+  Mox API
+
+  exp:
+    angry
+    happy
+    neutral (default if no value)
+    shy
+
+  pos:
+    center
+    right
+    left
+
+  animation:
+    fadeIn
+    fadeInRight
+    fadeInLeft
+
+  -->
+</dom-module>
