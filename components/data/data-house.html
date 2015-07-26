@@ -1,30 +1,36 @@
-<link rel="import" href="../../js/polymer/polymer.html">
-<link rel="import" href="../../components/core-ajax/core-ajax.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
 
 <dom-module id="data-house">
 
   <template>
-    <core-ajax
+    <iron-ajax
     auto
     url="../../json/script.json"
     params='{"alt":"json", "q":"chrome"}'
-    handleAs="json"
-    on-core-response="handleResponse">
-    </core-ajax>
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"></iron-ajax>
 
     <section>data-house loaded</section>
+
   </template>
 
   <script>
     Polymer({
       is: "data-house",
       properties: {
-        story: [],
-        handleResponse: function(e){
-          //this.story = e.detail.response;
-          console.log(e);
+        script : {
+          type: Object,
         }
       },
+
+      handleResponse: function(request){
+          //this.story = e.detail.response;
+          console.log(request.detail.response);
+          this.script = request.detail.response;
+      },
+
       ready : function() {
       }
     });
