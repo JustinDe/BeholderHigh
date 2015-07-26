@@ -1,0 +1,42 @@
+<link rel="import" href="../../js/polymer/polymer.html">
+<link rel="import" href="../../components/core-ajax/core-ajax.html">
+
+<dom-module id="data-house">
+
+  <template>
+    <core-ajax
+    auto
+    url="../../json/script.json"
+    params='{"alt":"json", "q":"chrome"}'
+    handleAs="json"
+    on-core-response="handleResponse">
+    </core-ajax>
+
+    <section>data-house loaded</section>
+  </template>
+
+  <script>
+    Polymer({
+      is: "data-house",
+      properties: {
+        story: [],
+        handleResponse: function(e){
+          //this.story = e.detail.response;
+          console.log(e);
+        }
+      },
+      ready : function() {
+      }
+    });
+  </script>
+  <!--
+  select-box API
+  
+  text:
+    Free text for what ever is fed into the story.
+
+  link:
+    Free text for what is fed as the connecting link
+
+  -->
+</dom-module>

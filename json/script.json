@@ -8,7 +8,7 @@
 	"D1S1-1": 
 	{
 		"bg" : "Classroom",
-		"story" : "You're <name>, a student at Beholder High. This is a strange High School that admits beholders in addition to regular human students. There are only three days until the Big Dance. You've never been the most popular student, but the idea showing up at the Big Dance alone is too grim to bear.",
+		"story" : "You're :name:, a student at Beholder High. This is a strange High School that admits beholders in addition to regular human students. There are only three days until the Big Dance. You've never been the most popular student, but the idea showing up at the Big Dance alone is too grim to bear.",
 		"next" : "D1S1-2"
 	}
 

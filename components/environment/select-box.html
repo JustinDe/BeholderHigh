@@ -3,9 +3,8 @@
 <dom-module id="select-box">
 
   <template>
-    <a href="{{link}}">{{text}}</a>
-  </template>
-
+   <span on-click="buttonClick">{{text}}</span>
+   </template>
   <script>
     Polymer({
       is: "select-box",
@@ -13,11 +12,10 @@
         text: {
           type: String,
           value: "Button Default",
-        },
-        link: {
-          type: String,
-          value: "http://google.com",
         }
+      },
+      buttonClick: function(event, detail, sender) {
+          document.querySelector('beholder-container').beholder = "mox"; //This is just a static test
       },
       ready : function() {
         document.querySelector('select-box').classList.add("next");
@@ -28,10 +26,7 @@
   select-box API
   
   text:
-    Free text for what ever is fed into the story.
-
-  link:
-    Free text for what is fed as the connecting link
+    Free text for what ever is fed in from the story.
 
   -->
 </dom-module>
