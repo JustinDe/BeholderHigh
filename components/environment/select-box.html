@@ -11,11 +11,15 @@
       properties: {
         text: {
           type: String,
-          value: "Button Default",
+          value: "Button Default"
+        },
+        next: {
+          type: String,
+          value: ""
         }
       },
       buttonClick: function(event, detail, sender) {
-          document.querySelector('beholder-container').beholder = "mox"; //This is just a static test
+           document.querySelector('data-house').next = this.next;
       },
       ready : function() {
         document.querySelector('select-box').classList.add("next");

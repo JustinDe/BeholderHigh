@@ -11,38 +11,46 @@
     handle-as="json"
     on-response="handleResponse"
     debounce-duration="300"></iron-ajax>
-
-    <section>data-house loaded</section>
-
   </template>
-
+  
   <script>
     Polymer({
       is: "data-house",
       properties: {
         script : {
-          type: Object,
+          type: Object
+        },
+        next : {
+          type: String,
+          observer: 'nextScene'
         }
       },
 
       handleResponse: function(request){
-          //this.story = e.detail.response;
-          console.log(request.detail.response);
+          //console.log(request.detail.response);
           this.script = request.detail.response;
+          this.next = "D1S10";
+      },
+
+      nextScene: function() {
+        console.log("Observed: " + this.next);
+        document.querySelector('text-block').story = this.script[this.next].story;
+        document.querySelector('bg-stage').bg = this.script[this.next].bg;
+        document.querySelector('select-box').next = this.script[this.next].next;
+        document.querySelector('select-box').text = this.script[this.next].buttonText;
       },
 
       ready : function() {
-      }
+      },
+      
     });
+    
+    
   </script>
   <!--
   select-box API
   
-  text:
+  script:
     Free text for what ever is fed into the story.
-
-  link:
-    Free text for what is fed as the connecting link
-
   -->
 </dom-module>
