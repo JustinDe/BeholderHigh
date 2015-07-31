@@ -27,17 +27,101 @@
       },
 
       handleResponse: function(request){
-          //console.log(request.detail.response);
+          console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S10";
+          this.next = "D1S100";
       },
 
       nextScene: function() {
         console.log("Observed: " + this.next);
-        document.querySelector('text-block').story = this.script[this.next].story;
-        document.querySelector('bg-stage').bg = this.script[this.next].bg;
-        document.querySelector('select-box').next = this.script[this.next].next;
-        document.querySelector('select-box').text = this.script[this.next].buttonText;
+
+        /*
+        bg
+        story
+        next
+        buttonText
+        beholder
+        beholderAnimation
+        beholderLocation
+        beholderExp
+        selection
+          text
+          next
+        */
+
+        if(this.script[this.next].story != "undefined")
+        {
+          document.querySelector('text-block').story = this.script[this.next].story;
+        }
+        else
+        {
+          document.querySelector('text-block').story = "";
+        }
+
+        if(this.script[this.next].bg != "undefined")
+        {
+          document.querySelector('bg-stage').bg = this.script[this.next].bg;
+        }
+        else
+        {
+          document.querySelector('bg-stage').bg = "";
+        }
+
+        if(this.script[this.next].next != "undefined")
+        {
+          document.querySelector('select-box').next = this.script[this.next].next;
+        }
+        else
+        {
+          document.querySelector('select-box').next = ""; 
+        }
+
+        if(this.script[this.next].buttonText != "undefined")
+        {
+          document.querySelector('select-box').text = this.script[this.next].buttonText;
+        }
+        else
+        {
+          document.querySelector('select-box').text = ""; 
+        }
+
+        if(this.script[this.next].beholder != "undefined")
+        {
+          document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
+        }
+        else
+        {
+          document.querySelector('beholder-container').beholder = ""; 
+        }
+
+        if(this.script[this.next].animation != "undefined")
+        {
+          document.querySelector('beholder-container').beholderAnimation = this.script[this.next].animation;
+        }
+        else
+        {
+          document.querySelector('beholder-container').beholderAnimation = ""; 
+        }
+
+        if(this.script[this.next].beholderPos != "undefined")
+        {
+          document.querySelector('beholder-container').pos = this.script[this.next].beholderPos;
+        }
+        else
+        {
+          document.querySelector('beholder-container').pos = ""; 
+        }
+
+        if(this.script[this.next].beholderExp != "undefined")
+        {
+          document.querySelector('beholder-container').exp = this.script[this.next].beholderExp;
+        }
+        else
+        {
+          document.querySelector('beholder-container').exp = ""; 
+        }
+
+
       },
 
       ready : function() {

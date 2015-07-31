@@ -1,17 +1,119 @@
 {
-	"D1S10": 
+	"D1S100": 
 	{
 		"bg" : "Classroom",
 		"story" : "We don't have long.",
-		"next" : "D1S11",
+		"next" : "D1S101",
 		"buttonText" : "Next"
 	},
-	"D1S11": 
+	"D1S101": 
 	{
 		"bg" : "Classroom",
 		"story" : "You're :name:, a student at Beholder High. This is a strange High School that admits beholders in addition to regular human students. There are only three days until the Big Dance. You've never been the most popular student, but the idea showing up at the Big Dance alone is too grim to bear.",
-		"next" : "D1S12",
+		"next" : "D1S102",
 		"buttonText" : "Next"
-	}
-
+	},
+	"D1S102": 
+	{
+		"bg" : "Classroom",
+		"story" : "It's frustrating, I know. Not the self-importance of the dance, or the complexities of personal interaction. It's frustrating that none of the other students have recognized that you are obviously cut from the supreme cloth, that your form, above all others, is the ideal for all beholders. You'll have to swallow your pride.",
+		"next" : "D1S103",
+		"buttonText" : "Next"
+	},
+	"D1S103": 
+	{
+		"bg" : "Classroom",
+		"story" : "Quiet. Class is starting. There are few others whose forms have impressed you, despite their imperfections.",
+		"next" : "D1S104",
+		"buttonText" : "Next"
+	},
+	"D1S104": 
+	{
+		"bg" : "Classroom",
+		"story" : "There's Moxanimous. A rather rough Beholder. A member of the school's soccer team. An intimidating physical presence.",
+		"next" : "D1S105",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderAnimation" : "fadeIn",
+		"beholderPos" : "center",
+		"beholderExp" : "neutral"
+	},
+	"D1S105": 
+	{
+		"bg" : "Classroom",
+		"story" : "That's Bethelzed. High test scores. Well-read. Vision charmingly impaired. A domineering mind.",
+		"next" : "D1S106",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderAnimation" : "fadeIn",
+		"beholderPos" : "center",
+		"beholderExp" : "neutral"
+	},
+	"D1S106": 
+	{
+		"bg" : "Classroom",
+		"story" : "And here comes Siriak the Rapid, ironically late as usual. One of the few students at Beholder High with a car. Parks with total disregard for permits. Courageous, in a way, and highly fashionable.",
+		"next" : "D1S107",
+		"buttonText" : "Next",
+		"beholder" : "siri",
+		"beholderAnimation" : "fadeIn",
+		"beholderPos" : "center",
+		"beholderExp" : "neutral"
+	},
+	"D1S107": 
+	{
+		"bg" : "Classroom",
+		"story" : "Damnation! Your brooding has distracted you, and now you've been singled out for questioning!",
+		"next" : "D1S108",
+		"buttonText" : "Next"
+	},
+	"D1S108": 
+	{
+		"bg" : "Classroom",
+		"story" : "So :name:, what is the solution?",
+		"selection" : 
+		{
+			"1" : 
+			{
+				"text" : "Six",
+				"next" : "D1S109"
+			},
+			"2" : 
+			{
+				"text" : "Sixteen",
+				"next" : "D1S110"
+			},
+			"3" : 
+			{
+				"text" : "I wasn't paying attention",
+				"next" : "D1S111"
+			}
+		}
+	},
+	"D1S109" : 
+	{
+		"bg" : "Classroom",
+		"story" : "Wrong. You haven't been paying attention, have you?",
+		"next" : "D1S200",
+		"buttonText" : "Next"
+	},
+	"D1S110" : 
+	{
+		"bg" : "Classroom",
+		"story" : "That's correct!",
+		"next" : "D1S200",
+		"buttonText" : "Next"
+	},
+	"D1S111" : 
+	{
+		"bg" : "Classroom",
+		"story" : "I didn't think so. Bethelzed, you look like you know the answer...",
+		"next" : "D1S200",
+		"buttonText" : "Next"
+	},
+	"D1S200" :
+	{
+		"bg" : "Classroom",
+		"story" : "It's lunch. If nothing else, you've resolved not to sit by yourself. There are plenty of empty seats."
+	} 
 }
