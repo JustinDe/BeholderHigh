@@ -29,7 +29,7 @@
       handleResponse: function(request){
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S100";
+          this.next = "D1S108"; //Change this to be dynamically the first object in the JSON load
       },
 
       nextScene: function() {
@@ -91,7 +91,7 @@
         }
         else
         {
-          document.querySelector('beholder-container').beholder = ""; 
+          document.querySelector('beholder-container').beholder = "blank"; 
         }
 
         if(this.script[this.next].animation != "undefined")
@@ -118,10 +118,20 @@
         }
         else
         {
-          document.querySelector('beholder-container').exp = ""; 
+          document.querySelector('beholder-container').exp = "neutral"; 
         }
 
-
+        if(this.script[this.next].selection != "undefined")
+        {
+          //var numSelections = Object.keys(this.script[this.next].selection).length;
+          //console.log(numSelections)
+          document.querySelector('multi-selector').selections = this.script[this.next].selection;
+        }
+        else
+        {
+          //element that dosent exist yet
+          document.querySelector('multi-selector').selections = "";
+        }
       },
 
       ready : function() {

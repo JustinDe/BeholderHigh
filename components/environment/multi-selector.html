@@ -1,0 +1,51 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="multi-selector">
+
+  <template repeat="{{st in selectionText}}">
+    <ul>
+      <li>{{st}}</li>
+    </ul>
+  </template>
+  <template repeat="rt in selectionRoutes">
+    <ul>
+      <li>{{rt}}</li>
+    </ul>
+  </template>
+
+  <script>
+    Polymer({
+      is: "multi-selector",
+      properties: {
+        selections: {
+          type: Object,
+          value: {}
+        },
+        selectionText : {
+          type: Array,
+          computed: 'textArray(selections.text)'
+        },
+        selectionRoutes : {
+          type: Array,
+          computed: 'routesArray(selections.routes)'
+        }
+      },
+      textArray : function(text) {
+        console.log(text);
+        return text;
+      },
+      routesArray : function(routes) {
+        console.log(routes);
+        return routes
+      },
+      ready : function() {
+      }
+    });
+  </script>
+  <!--
+  text-block API
+  
+  selection:
+
+  -->
+</dom-module>
