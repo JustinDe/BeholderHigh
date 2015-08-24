@@ -3,7 +3,7 @@
 <dom-module id="text-block">
 
   <template>
-    <section>{{story}}</section>
+    <section>{{filterPass}}</section>
   </template>
 
   <script>
@@ -12,9 +12,19 @@
       properties: {
         story: {
           type: String,
-          value: "Test",
+          value: "Test"
+        },
+
+        filterPass: {
+          computed: "filtron(story)" 
         }
       },
+
+      filtron: function(story) {
+        story = story.replace(":name:", localStorage.getItem('playerName'));
+        return story
+      },
+
       ready : function() {
       }
     });

@@ -110,17 +110,16 @@
 
         if(this.script[this.next].selection != undefined)
         {
-          //console.log(this.script[this.next].selection[1].text)
           document.querySelector('multi-selector').selections = this.script[this.next].selection;
         }
         else
         {
-          //element that dosent exist yet
           document.querySelector('multi-selector').selections = "";
         }
       },
 
       ready : function() {
+        localStorage.setItem('playerName', "Justin"); //this is teporary until I get a playerName screen
       },
       
     });

@@ -102,6 +102,18 @@
 	"D1S200" :
 	{
 		"bg" : "Classroom",
-		"story" : "It's lunch. If nothing else, you've resolved not to sit by yourself. There are plenty of empty seats."
-	} 
+		"story" : "It's lunch. If nothing else, you've resolved not to sit by yourself. There are plenty of empty seats.",
+		"next" : "D1S201",
+		"buttonText" : "Next"
+	},
+	"D1S201": 
+	{
+		"bg" : "Lunchroom",
+		"selection" : 
+		{
+			"Sit with Moxanimous and the soccer team." : "D1S202",
+			"Sit with Bethelzed and a few other quiet kids." : "D1S209",
+			"Ingratiate yourself with Siriak the Rapid and the privilege crowd." : "D1S2015"
+		}
+	}
 }
