@@ -1,15 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="multi-selector">
-
-  <template repeat="{{st in selectionText}}">
+  <template>
     <ul>
-      <li>{{st}}</li>
-    </ul>
-  </template>
-  <template repeat="rt in selectionRoutes">
-    <ul>
-      <li>{{rt}}</li>
+      <template is="dom-repeat" items="{{toArray(selections)}}">
+          <li on-click="buttonClick">{{item.name}}</li>   
+      </template>
     </ul>
   </template>
 
@@ -21,22 +17,15 @@
           type: Object,
           value: {}
         },
-        selectionText : {
-          type: Array,
-          computed: 'textArray(selections.text)'
-        },
-        selectionRoutes : {
-          type: Array,
-          computed: 'routesArray(selections.routes)'
-        }
       },
-      textArray : function(text) {
-        console.log(text);
-        return text;
+      toArray: function(obj) {
+        return Object.keys(obj).map(function(key) {
+          return {name: key, value: obj[key]};
+        });
       },
-      routesArray : function(routes) {
-        console.log(routes);
-        return routes
+      buttonClick: function(event, detail, sender) {
+        //console.log(this.selections[event.target.innerHTML]);
+        document.querySelector('data-house').next = this.selections[event.target.innerHTML];
       },
       ready : function() {
       }
@@ -45,7 +34,7 @@
   <!--
   text-block API
   
-  selection:
+  selections:
 
   -->
 </dom-module>

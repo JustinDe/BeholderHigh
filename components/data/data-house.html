@@ -27,29 +27,16 @@
       },
 
       handleResponse: function(request){
+          console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S100"; //Change this to be dynamically the first object in the JSON load
+          this.next = "D1S108"; //Change this to be dynamically the first object in the JSON load
       },
 
       nextScene: function() {
         console.log("Observed: " + this.next);
 
-        /*
-        bg
-        story
-        next
-        buttonText
-        beholder
-        beholderAnimation
-        beholderLocation
-        beholderExp
-        selection
-          text
-          next
-        */
-
-        if(this.script[this.next].story != "undefined")
+        if(this.script[this.next].story != undefined)
         {
           document.querySelector('text-block').story = this.script[this.next].story;
         }
@@ -58,7 +45,7 @@
           document.querySelector('text-block').story = "";
         }
 
-        if(this.script[this.next].bg != "undefined")
+        if(this.script[this.next].bg != undefined)
         {
           document.querySelector('bg-stage').bg = this.script[this.next].bg;
         }
@@ -67,7 +54,7 @@
           document.querySelector('bg-stage').bg = "";
         }
 
-        if(this.script[this.next].next != "undefined")
+        if(this.script[this.next].next != undefined)
         {
           document.querySelector('select-box').next = this.script[this.next].next;
         }
@@ -76,7 +63,7 @@
           document.querySelector('select-box').next = ""; 
         }
 
-        if(this.script[this.next].buttonText != "undefined")
+        if(this.script[this.next].buttonText != undefined)
         {
           document.querySelector('select-box').text = this.script[this.next].buttonText;
         }
@@ -85,7 +72,7 @@
           document.querySelector('select-box').text = ""; 
         }
 
-        if(this.script[this.next].beholder != "undefined")
+        if(this.script[this.next].beholder != undefined)
         {
           document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
         }
@@ -94,7 +81,7 @@
           document.querySelector('beholder-container').beholder = "blank"; 
         }
 
-        if(this.script[this.next].animation != "undefined")
+        if(this.script[this.next].animation != undefined)
         {
           document.querySelector('beholder-container').beholderAnimation = this.script[this.next].animation;
         }
@@ -103,7 +90,7 @@
           document.querySelector('beholder-container').beholderAnimation = ""; 
         }
 
-        if(this.script[this.next].beholderPos != "undefined")
+        if(this.script[this.next].beholderPos != undefined)
         {
           document.querySelector('beholder-container').pos = this.script[this.next].beholderPos;
         }
@@ -112,7 +99,7 @@
           document.querySelector('beholder-container').pos = ""; 
         }
 
-        if(this.script[this.next].beholderExp != "undefined")
+        if(this.script[this.next].beholderExp != undefined)
         {
           document.querySelector('beholder-container').exp = this.script[this.next].beholderExp;
         }
@@ -121,10 +108,9 @@
           document.querySelector('beholder-container').exp = "neutral"; 
         }
 
-        if(this.script[this.next].selection != "undefined")
+        if(this.script[this.next].selection != undefined)
         {
-          //var numSelections = Object.keys(this.script[this.next].selection).length;
-          //console.log(numSelections)
+          //console.log(this.script[this.next].selection[1].text)
           document.querySelector('multi-selector').selections = this.script[this.next].selection;
         }
         else

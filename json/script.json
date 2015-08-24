@@ -71,20 +71,11 @@
 	{
 		"bg" : "Classroom",
 		"story" : "So :name:, what is the solution?",
-		"selection" : [
-				{
-					"text" : "Six",
-					"next" : "D1S109"
-				},
-				{
-					"text" : "Sixteen",
-					"next" : "D1S110"
-				},
-				{
-					"text" : "I wasn't paying attention",
-					"next" : "D1S111"
-				}
-			]
+		"selection" : 
+		{
+			"Six" : "D1S109",
+			"Sixteen": "D1S110",
+			"I wasn't paying attention" : "D1S111"
 		}
 	},
 	"D1S109" : 
