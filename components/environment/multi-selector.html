@@ -3,7 +3,7 @@
 <dom-module id="multi-selector">
   <template>
     <ul>
-      <template is="dom-repeat" items="{{toArray(selections)}}">
+      <template is="dom-repeat" items="{{filteredSelections}}">
           <li on-click="buttonClick">{{item.name}}</li>   
       </template>
     </ul>
@@ -17,6 +17,16 @@
           type: Object,
           value: {}
         },
+        uniqueSelection: {
+          type: String,
+          value: ""
+        },
+        uniqueSelectionArr: {
+          computed: "toArray(uniqueSelection)"
+        },
+        filteredSelections: {
+          computed: "filterUniques(selections)"
+        }
       },
       toArray: function(obj) {
         return Object.keys(obj).map(function(key) {
@@ -25,7 +35,34 @@
       },
       buttonClick: function(event, detail, sender) {
         //console.log(this.selections[event.target.innerHTML]);
+        //console.log(this.uniqueSelectionArr[0].name);
+        if(localStorage.getItem(this.uniqueSelectionArr[0].name))
+        {
+          var tempArr = localStorage.getItem(this.uniqueSelectionArr[0].name);
+          localStorage.setItem(this.uniqueSelectionArr[0].name,tempArr.concat([this.uniqueSelectionArr[0].value])); //fuck
+        }
+        else
+        {
+          localStorage.setItem(this.uniqueSelectionArr[0].name,[this.uniqueSelectionArr[0].value]);
+        }
+        
         document.querySelector('data-house').next = this.selections[event.target.innerHTML];
+      },
+      filterUniques: function(selections) {
+        console.log(Object.keys(selections));
+        console.log(selections["Pick up your tray and sit with Bethelzed."]);
+        for(var i = 0; i < Object.keys(selections).length; i++)
+        {
+          // for(var p = 0; p < localStorage.getItem(this.uniqueSelectionArr.name).length; p++)
+          // if (arrValues.indexOf('Sam') > -1)
+          // {
+
+          // }
+          // else
+          // {
+
+          // }
+        }
       },
       ready : function() {
       }

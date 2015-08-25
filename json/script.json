@@ -113,7 +113,143 @@
 		{
 			"Sit with Moxanimous and the soccer team." : "D1S202",
 			"Sit with Bethelzed and a few other quiet kids." : "D1S209",
-			"Ingratiate yourself with Siriak the Rapid and the privilege crowd." : "D1S2015"
+			"Ingratiate yourself with Siriak the Rapid and the privilege crowd." : "D1S215"
 		}
+	},
+	"D1S202" :
+	{
+		"bg" : "Lunchroom",
+		"story" : "Moxanimus slaps you heartily on the back with an eye-stalk.",
+		"next" : "D1S203",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderAnimation" : "fadeInRight",
+		"beholderPos" : "right",
+		"beholderExp" : "neutral"
+	},
+	"D1S203" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Moxanimous",
+		"story" : "You aren't usually so sociable, :name:. Did someone take your seat?",
+		"next" : "D1S204",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderPos" : "right",
+		"beholderExp" : "neutral"
+	},
+	"D1S204" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": ":name:",
+		"selection" : 
+		{
+			"...No" : "D1S205",
+			"I sit where I please." : "D1S205"
+		},
+		"beholder" : "mox",
+		"beholderPos" : "right",
+		"beholderExp" : "neutral"
+	},
+	"D1S205" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Moxanimous",
+		"story" : "I'm just kidding, :name:. You don't have to be so serious all the time.",
+		"next" : "D1S206",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderPos" : "right",
+		"beholderExp" : "happy"
+	},
+	"D1S206" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Moxanimous",
+		"story" : "I'm thinking about hitting the gym during free period. Do you have any good workout music? Anything with a hard beat and a lot of synthesizers.",
+		"next" : "D1S207",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderPos" : "right",
+		"beholderExp" : "neutral"
+	},
+	"D1S207" :
+	{
+		"bg" : "Lunchroom",
+		"story" : "Before you can respond, one of the other soccer players says something, and laughter circles around the table.",
+		"next" : "D1S208",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderPos" : "right",
+		"beholderExp" : "neutral"
+	},
+	"D1S208": 
+	{
+		"bg" : "Lunchroom",
+		"selection" : 
+		{
+			"Pick up your tray and sit with Bethelzed." : "D1S209",
+			"Pick up your tray and sit with Siriak the Rapid." : "D1S215",
+			"Sit quietly and wait for lunch to end." : "D1S300"
+		},
+		"uniqueSelection" : 
+		{
+			"lunchroom" : "Pick up your tray and sit with Moxanimous."
+		}
+	},
+	"D1S209" :
+	{
+		"bg" : "Lunchroom",
+		"story" : "Bethelzed's few friends sit quietly amid their open textbooks. Bethelzed is reading intently.",
+		"next" : "D1S210",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "neutral"
+	},
+	"D1S210" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Bethelzed",
+		"story" : "Oh, :name:. Did you want to sit with me? Are you ready for the test next week?",
+		"next" : "D1S211",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "neutral"
+	},
+	"D1S211" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": ":name:",
+		"selection" : 
+		{
+			"I haven't studied." : "D1S212",
+			"I refuse to be tested by the unworthy." : "D1S212"
+		},
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "neutral"
+	},
+	"D1S212" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Bethelzed",
+		"story" : "Oh... Well, I haven't studied as much as I should have. It's embarrassing, but I've been stuck on this Dating Sim. I guess if you want to study, I'll be in the library during free period.",
+		"next" : "D1S213",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "shy"
+	},
+	"D1S213" :
+	{
+		"bg" : "Lunchroom",
+		"story" : "Bethelzed smiles at you, and goes back to reading.",
+		"next" : "D1S214",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "happy"
 	}
 }

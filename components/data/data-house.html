@@ -30,7 +30,7 @@
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S100"; //Change this to be dynamically the first object in the JSON load
+          this.next = "D1S208"; //Change this to be dynamically the first object in the JSON load
       },
 
       nextScene: function() {
@@ -43,6 +43,15 @@
         else
         {
           document.querySelector('text-block').story = "";
+        }
+
+        if(this.script[this.next].namePlate != undefined)
+        {
+          document.querySelector('name-plate').name = this.script[this.next].namePlate;
+        }
+        else
+        {
+          document.querySelector('name-plate').name = "";
         }
 
         if(this.script[this.next].bg != undefined)
@@ -116,9 +125,21 @@
         {
           document.querySelector('multi-selector').selections = "";
         }
+
+        if(this.script[this.next].uniqueSelection != undefined)
+        {
+          document.querySelector('multi-selector').uniqueSelection = this.script[this.next].uniqueSelection;
+        }
+        else
+        {
+          document.querySelector('multi-selector').uniqueSelection = "";
+        }
+
+
       },
 
       ready : function() {
+        localStorage.clear();
         localStorage.setItem('playerName', "Justin"); //this is teporary until I get a playerName screen
       },
       
