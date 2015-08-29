@@ -4,7 +4,7 @@
   <template>
     <ul>
       <template is="dom-repeat" items="{{filteredSelections}}">
-          <li on-click="buttonClick">{{item.name}}</li>   
+          <li on-click="buttonClick">{{item}}</li>   
       </template>
     </ul>
   </template>
@@ -25,7 +25,7 @@
           computed: "toArray(uniqueSelection)"
         },
         filteredSelections: {
-          computed: "filterUniques(selections)"
+          computed: "filterUniques(selections, uniqueSelection)"
         }
       },
       toArray: function(obj) {
@@ -36,32 +36,44 @@
       buttonClick: function(event, detail, sender) {
         //console.log(this.selections[event.target.innerHTML]);
         //console.log(this.uniqueSelectionArr[0].name);
-        if(localStorage.getItem(this.uniqueSelectionArr[0].name))
+        if(this.uniqueSelection)
         {
-          var tempArr = localStorage.getItem(this.uniqueSelectionArr[0].name);
-          localStorage.setItem(this.uniqueSelectionArr[0].name,tempArr.concat([this.uniqueSelectionArr[0].value])); //fuck
-        }
-        else
-        {
-          localStorage.setItem(this.uniqueSelectionArr[0].name,[this.uniqueSelectionArr[0].value]);
+          if(localStorage.getItem(this.uniqueSelectionArr[0].name))
+          {
+            var tempArr = localStorage.getItem(this.uniqueSelectionArr[0].name);
+            localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify(tempArr.concat([this.uniqueSelectionArr[0].value]))); //fuck
+          }
+          else
+          {
+            localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify([this.uniqueSelectionArr[0].value]));
+          }
         }
         
         document.querySelector('data-house').next = this.selections[event.target.innerHTML];
       },
-      filterUniques: function(selections) {
-        console.log(Object.keys(selections));
-        console.log(selections["Pick up your tray and sit with Bethelzed."]);
-        for(var i = 0; i < Object.keys(selections).length; i++)
+      filterUniques: function(selections, uniqueSelection) {
+        selectionsKeys = Object.keys(selections);
+        //console.log(selectionsKeys);
+        if(uniqueSelection) // will always be true and will cause null -- fix this later maybe with t/f
         {
-          // for(var p = 0; p < localStorage.getItem(this.uniqueSelectionArr.name).length; p++)
-          // if (arrValues.indexOf('Sam') > -1)
-          // {
-
-          // }
-          // else
-          // {
-
-          // }
+          var itmsToFilter = JSON.parse(localStorage.getItem(this.uniqueSelectionArr[0].name));
+          for(var i = 0; i < itmsToFilter.length; i++)
+          {
+            //console.log("This is a unique filter case");
+            //console.log(Object.keys(selections).indexOf(itmsToFilter[i]));
+            var iToSplice = selectionsKeys.indexOf(itmsToFilter[i]);
+            if (iToSplice != -1)
+            {
+               //console.log("Found In Array");
+               selectionsKeys.splice(iToSplice, 1);
+            }
+          }
+          //console.log(selectionsKeys);
+          return selectionsKeys
+        }
+        else
+        {
+          return selectionsKeys
         }
       },
       ready : function() {

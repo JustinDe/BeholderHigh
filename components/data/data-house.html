@@ -30,7 +30,7 @@
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S208"; //Change this to be dynamically the first object in the JSON load
+          this.next = "D1S100"; //Change this to be dynamically the first object in the JSON load
       },
 
       nextScene: function() {
@@ -139,8 +139,10 @@
       },
 
       ready : function() {
+        //var testArray = JSON.stringify(["Pick up your tray and sit with Bethelzed.", "Pick up your tray and sit with Siriak the Rapid."]);
         localStorage.clear();
         localStorage.setItem('playerName', "Justin"); //this is teporary until I get a playerName screen
+        //localStorage.setItem('lunchroom', testArray);
       },
       
     });

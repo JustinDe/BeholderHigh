@@ -205,7 +205,8 @@
 		"buttonText" : "Next",
 		"beholder" : "beth",
 		"beholderPos" : "left",
-		"beholderExp" : "neutral"
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeInLeft"
 	},
 	"D1S210" :
 	{
@@ -251,5 +252,161 @@
 		"beholder" : "beth",
 		"beholderPos" : "left",
 		"beholderExp" : "happy"
+	},
+	"D1S214": 
+	{
+		"bg" : "Lunchroom",
+		"selection" : 
+		{
+			"Pick up your tray and sit with Moxanimous." : "D1S202",
+			"Pick up your tray and sit with Siriak the Rapid." : "D1S215",
+			"Sit quietly and wait for lunch to end." : "D1S300"
+		},
+		"uniqueSelection" : 
+		{
+			"lunchroom" : "Pick up your tray and sit with Bethelzed."
+		}
+	},
+	"D1S215" :
+	{
+		"bg" : "Lunchroom",
+		"story" : "Siriak sits surrounded by hangers on. You squeeze into a small wedge of table space.",
+		"next" : "D1S216",
+		"buttonText" : "Next",
+		"beholder" : "siri",
+		"beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn"
+	},
+	"D1S216" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Siriak the Rapid",
+		"story" : "It was seriously so gross. It was like *pbbbft*. But they knew who my dad was, so it was like, not even a thing. Not like any of you have ever had to deal with the 5-0.",
+		"next" : "D1S217",
+		"buttonText" : "Next",
+		"beholder" : "siri",
+		"beholderPos" : "center",
+		"beholderExp" : "angry2"
+	},
+	"D1S217" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": ":name:",
+		"selection" : 
+		{
+			"Actually, there was an incident on my street last year..." : "D1S218",
+			"The police in this town are soft." : "D1S218"
+		},
+		"beholder" : "siri",
+		"beholderPos" : "center",
+		"beholderExp" : "angry2"
+	},
+	"D1S218" :
+	{
+		"bg" : "Lunchroom",
+		"namePlate": "Siriak the Rapid",
+		"story" : "Ha! I didn't even see you there, Justin. But you get what I'm talking about, right? It's all about spinning rims and fuzzy dice. All that. We're going to hang out by the dumpster during free period. I stole some smokes from my mom. You should come with.",
+		"next" : "D1S219",
+		"buttonText" : "Next",
+		"beholder" : "siri",
+		"beholderPos" : "center",
+		"beholderExp" : "neutral"
+	},
+	"D1S219": 
+	{
+		"bg" : "Lunchroom",
+		"selection" : 
+		{
+			"Pick up your tray and sit with Moxanimous." : "D1S202",
+			"Pick up your tray and sit with Bethelzed." : "D1S209",
+			"Sit quietly and wait for lunch to end." : "D1S300"
+		},
+		"uniqueSelection" : 
+		{
+			"lunchroom" : "Pick up your tray and sit with Siriak the Rapid."
+		}
+	},
+	"D1S300" :
+	{
+		"bg" : "Lunchroom",
+		"story" : "Free period has arrived. Normally, you'd hide yourself somewhere. Today is a good day to commit yourself to a course of self-improvement.",
+		"next" : "D1S301",
+		"buttonText" : "Next"
+	},
+	"D1S301": 
+	{
+		"bg" : "Lunchroom",
+		"selection" : 
+		{
+			"Go work out at the gym." : "D1S302",
+			"Go study in the library." : "D1S304",
+			"Go loiter by the dumpster." : "D1S306"
+		}
+	},
+	"D1S302" :
+	{
+		"bg" : "Gym",
+		"story" : "You catch a glimpse of Moxanimous, festooned with earbuds, and vaporizing archery targets with eye-stalk beams. This is not the time for an intrusion, though. You don't want to appear clingy.",
+		"next" : "D1S303",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderPos" : "right",
+		"beholderExp" : "angry",
+		"beholderAnimation" : "fadeInRight"
+	},
+	"D1S303" :
+	{
+		"bg" : "Gym",
+		"story" : "Instead, you focus on manipulating some of the exercise equipment. When Moxanimous glances over at you, you're straining heroically against your weights. By the time the bell rings, you've exhausted yourself, but you're feeling a bit more robust.",
+		"next" : "D2S100",
+		"buttonText" : "Next",
+		"beholder" : "mox",
+		"beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn"
+	},
+	"D1S304" :
+	{
+		"bg" : "Library",
+		"story" : "Bethelzed pulls a withered tome from the shelf with telekinesis, and adds it to a pile on a nearby table. You take a seat in the shadow of study mountain, but before you can speak, Bethelzed shushes you.",
+		"next" : "D1S305",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeInLeft"
+	},
+	"D1S305" :
+	{
+		"bg" : "Library",
+		"story" : "It's just as well. You really should study. Unsure of what the next week's test actually covers, you commit to a more general course of reading. Whatever your grade, you're confident that knowledge is its own reward.",
+		"next" : "D2S100",
+		"buttonText" : "Next",
+		"beholder" : "beth",
+		"beholderPos" : "left",
+		"beholderExp" : "neutral"
+	},
+	"D1S306" :
+	{
+		"bg" : "Dumpster",
+		"story" : "Siriak the Rapid, and some other familiar faces, slouch in the shadow of a rusty dumpster, taking triumphant drags on a shared cigarette. These kids will leap viciously on any perceived social faux pas, so you resolve to remain silent.",
+		"next" : "D1S307",
+		"buttonText" : "Next",
+		"beholder" : "siri",
+		"beholderPos" : "right",
+		"beholderExp" : "angry1",
+		"beholderAnimation" : "fadeInRight"
+	},
+	"D1S307" :
+	{
+		"bg" : "Dumpster",
+		"story" : "Someone offers you the cigarette, and you can feel Siriak's gaze drawn down upon you. You draw, hold it, and exhale, all without erupting into a fit of coughing. They think you're cool. Siriak thinks you're cool. And you've made a fool of the surgeon general.",
+		"next" : "D2S100",
+		"buttonText" : "Next",
+		"beholder" : "siri",
+		"beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn"
 	}
 }
