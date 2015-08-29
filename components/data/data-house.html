@@ -81,22 +81,13 @@
           document.querySelector('select-box').text = ""; 
         }
 
-        if(this.script[this.next].beholder != undefined)
+        if(this.script[this.next].beholderAnimation != undefined)
         {
-          document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
+          document.querySelector('beholder-container').animation = this.script[this.next].beholderAnimation;
         }
         else
         {
-          document.querySelector('beholder-container').beholder = "blank"; 
-        }
-
-        if(this.script[this.next].animation != undefined)
-        {
-          document.querySelector('beholder-container').beholderAnimation = this.script[this.next].animation;
-        }
-        else
-        {
-          document.querySelector('beholder-container').beholderAnimation = ""; 
+          document.querySelector('beholder-container').animation = "noAnimation"; 
         }
 
         if(this.script[this.next].beholderPos != undefined)
@@ -105,7 +96,7 @@
         }
         else
         {
-          document.querySelector('beholder-container').pos = ""; 
+          document.querySelector('beholder-container').pos = "noPos"; 
         }
 
         if(this.script[this.next].beholderExp != undefined)
@@ -115,6 +106,16 @@
         else
         {
           document.querySelector('beholder-container').exp = "neutral"; 
+        }
+
+        if(this.script[this.next].beholder != undefined)
+        {
+          document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
+          document.querySelector('beholder-container').beholderContext = this.next;
+        }
+        else
+        {
+          document.querySelector('beholder-container').beholder = "blank"; 
         }
 
         if(this.script[this.next].selection != undefined)

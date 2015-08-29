@@ -28,17 +28,28 @@
 	    animation: {
 			type: String
 	    },
+	    beholderContext: {
+	    	type: String,
+	    	observer: "rebuildClasses"
+	    }
 	  },
 	  
 	  buildImg : function(beholder, exp) {
 	    return "images/char/"+beholder+"/"+beholder+"-"+ exp +".png";
 	  },
 
-	  ready : function() {
-	    document.querySelector('beholder-container').classList.add("char");
+	  rebuildClasses : function()
+	  {
+	  	document.querySelector('beholder-container').removeAttribute("class")
+	  	document.querySelector('beholder-container').className = "nothing";
+	  	document.querySelector('beholder-container').classList.add("char");
 	    document.querySelector('beholder-container').classList.add("animated");
-	    document.querySelector('beholder-container').classList.add(this.pos);
+	  	document.querySelector('beholder-container').classList.add(this.pos);
 	    document.querySelector('beholder-container').classList.add(this.animation);
+	    document.querySelector('beholder-container').classList.remove("nothing");
+	  },
+
+	  ready : function() {
 	  }
 	});
 	</script>
