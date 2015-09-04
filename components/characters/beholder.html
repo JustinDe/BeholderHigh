@@ -40,13 +40,19 @@
 
 	  rebuildClasses : function()
 	  {
-	  	document.querySelector('beholder-container').removeAttribute("class")
-	  	document.querySelector('beholder-container').className = "nothing";
+	  	var tempAnimation = this.animation;
+	  	var tempPos = this.pos;
+	  	document.querySelector('beholder-container').classList.remove("char");
+	  	document.querySelector('beholder-container').classList.remove("animated");
+	  	document.querySelector('beholder-container').classList.remove("tempPos");
+	  	document.querySelector('beholder-container').classList.remove("tempAnimation");
 	  	document.querySelector('beholder-container').classList.add("char");
 	    document.querySelector('beholder-container').classList.add("animated");
-	  	document.querySelector('beholder-container').classList.add(this.pos);
-	    document.querySelector('beholder-container').classList.add(this.animation);
-	    document.querySelector('beholder-container').classList.remove("nothing");
+	  	document.querySelector('beholder-container').classList.add(tempPos);
+	    document.querySelector('beholder-container').classList.add(tempAnimation);
+	    setTimeout(function(){
+	    	document.querySelector('beholder-container').classList.remove(tempAnimation); // This is a really gross way of resetting animations. FUCK
+	    }, 850);
 	  },
 
 	  ready : function() {
