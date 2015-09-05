@@ -23,14 +23,42 @@
         next : {
           type: String,
           observer: 'nextScene'
-        }
+        },
+        plotPoint : {
+          type: Object,
+          observer: 'plotPointStore'
+        },
+        plotPointArr: {
+          computed: "toArray(plotPoint)"
+        },
       },
 
-      handleResponse: function(request){
+      handleResponse: function(request) {
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S104"; //Change this to be dynamically the first object in the JSON load
+          this.next = "D1S100"; //Change this to be dynamically the first object in the JSON load
+      },
+
+      toArray: function(obj) {
+        return Object.keys(obj).map(function(key) {
+          return {name: key, value: obj[key]};
+        });
+      },
+
+      plotPointStore: function() {
+          if(this.plotPoint != undefined)
+          {
+            if(localStorage.getItem(this.plotPointArr[0].name))
+            {
+              var tempArr = localStorage.getItem(this.plotPointArr[0].name);
+              localStorage.setItem(this.plotPointArr[0].name,JSON.stringify(tempArr.concat([this.plotPointArr[0].value]))); //fuck
+            }
+            else
+            {
+              localStorage.setItem(this.plotPointArr[0].name,JSON.stringify([this.plotPointArr[0].value]));
+            }
+          }
       },
 
       nextScene: function() {
@@ -136,13 +164,30 @@
           document.querySelector('multi-selector').uniqueSelection = "";
         }
 
+        if(this.script[this.next].plotPoint != undefined)
+        {
+          document.querySelector('data-house').plotPoint = this.script[this.next].plotPoint;
+        }
+        else
+        {
+          document.querySelector('data-house').plotPoint = undefined;
+        }
 
+        if(this.script[this.next].conditionalSelection != undefined)
+        {
+          document.querySelector('multi-selector').conditionalSelection = this.script[this.next].conditionalSelection;
+        }
+        else
+        {
+          document.querySelector('multi-selector').conditionalSelection = undefined;
+        }
       },
 
       ready : function() {
         //var testArray = JSON.stringify(["Pick up your tray and sit with Bethelzed.", "Pick up your tray and sit with Siriak the Rapid."]);
         localStorage.clear();
-        localStorage.setItem('playerName', "Justin"); //this is teporary until I get a playerName screen
+        localStorage.setItem('playerName', 'Justin'); //this is teporary until I get a playerName screen
+        localStorage.setItem('purchase', 'Electronic Music Compilation');
         //localStorage.setItem('lunchroom', testArray);
       },
       

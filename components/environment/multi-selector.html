@@ -7,6 +7,11 @@
           <li on-click="buttonClick">{{item}}</li>   
       </template>
     </ul>
+    <ul>
+      <template is="dom-repeat" items="{{conditionalSelectionBuilt}}">
+          <li on-click="conditionalbuttonClick">{{item}}</li>   
+      </template>
+    </ul>
   </template>
 
   <script>
@@ -26,6 +31,13 @@
         },
         filteredSelections: {
           computed: "filterUniques(selections, uniqueSelection)"
+        },
+        conditionalSelection: {
+          type : Object,
+          value: {}
+        },
+        conditionalSelectionBuilt: {
+          computed: "conditionalSelectionBuild(conditionalSelection)"
         }
       },
       toArray: function(obj) {
@@ -76,6 +88,21 @@
           return selectionsKeys
         }
       },
+      conditionalSelectionBuild: function(cSelection) {
+        if(cSelection)
+        {
+          var conditionKey = Object.keys(cSelection.condition)[0];
+          var conditionValue = cSelection.condition[conditionKey];
+          console.log(conditionKey)
+        }
+        //var constantKeys = 
+      },
+
+      conditionalbuttonClick: function()
+      {
+        document.querySelector('data-house').next = this.selections[event.target.innerHTML];
+      },
+
       ready : function() {
       }
     });

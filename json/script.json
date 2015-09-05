@@ -1,4 +1,10 @@
 {
+	"DAY1":
+	{
+		"story" : "Day 1",
+		"next" : "D1S102",
+		"buttonText" : "Next"
+	},
 	"D1S100": 
 	{
 		"bg" : "Classroom",
@@ -306,7 +312,7 @@
 	{
 		"bg" : "Lunchroom",
 		"namePlate": "Siriak the Rapid",
-		"story" : "Ha! I didn't even see you there, Justin. But you get what I'm talking about, right? It's all about spinning rims and fuzzy dice. All that. We're going to hang out by the dumpster during free period. I stole some smokes from my mom. You should come with.",
+		"story" : "Ha! I didn't even see you there, :name:. But you get what I'm talking about, right? It's all about spinning rims and fuzzy dice. All that. We're going to hang out by the dumpster during free period. I stole some smokes from my mom. You should come with.",
 		"next" : "D1S219",
 		"buttonText" : "Next",
 		"beholder" : "siri",
@@ -402,11 +408,450 @@
 	{
 		"bg" : "Dumpster",
 		"story" : "Someone offers you the cigarette, and you can feel Siriak's gaze drawn down upon you. You draw, hold it, and exhale, all without erupting into a fit of coughing. They think you're cool. Siriak thinks you're cool. And you've made a fool of the surgeon general.",
-		"next" : "D2S100",
+		"next" : "DAY2",
 		"buttonText" : "Next",
 		"beholder" : "siri",
 		"beholderPos" : "center",
 		"beholderExp" : "neutral",
 		"beholderAnimation" : "fadeIn"
-	}
+	},
+	"DAY2":
+	{
+		"story" : "Day 2",
+		"buttonText": "Next",
+        "next" : "D2S100"
+	},
+	"D2S100": 
+    {
+        "bg": "SoccerField", 
+        "buttonText": "Next",
+        "next" : "D2S101",
+        "story": "You arrive at school early enough that the soccer team is still practicing. Moxanimous is almost certainly among them..."
+    }, 
+    "D2S101": 
+    {
+        "bg": "SoccerField",
+        "selection" : 
+		{
+			"Stop and see if you can catch a glimpse of Moxanimous." : "D2S102",
+			"Keep Moving." : "D2S108"
+		}
+    }, 
+    "D2S102": 
+    {
+        "beholder": "mox",
+        "beholderPos" : "right",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeInRight",
+        "bg": "SoccerField", 
+        "buttonText": "Next",
+        "story": "The action breaks, and you see the players scatter across the field. Moxanimous bobs over to the fence where you're standing.",
+        "next" : "D2S103"
+    }, 
+    "D2S103": 
+    {
+        "beholder": "mox",
+        "beholderPos" : "right",
+		"beholderExp" : "neutral",
+        "bg": "SoccerField",
+        "namePlate": "Moxanimous",
+        "buttonText": "Next",
+        "story": "Hey. You're here early, aren't you :name:? Did you come to watch us practice?",
+        "next" : "D2S104"
+    }, 
+    "D2S104": 
+    {
+        "beholder": "mox",
+        "beholderPos" : "right",
+		"beholderExp" : "neutral",
+        "bg": "SoccerField",
+        "namePlate": ":name:",
+        "selection" : 
+		{
+			"Well, not all of you." : "D2S105",
+			"You'll have to play better than that if you want to beat Goblin Tech." : "D2S105"
+		}
+    }, 
+    "D2S105": 
+    {
+        "beholder": "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+        "bg": "SoccerField",
+        "namePlate": "Moxanimous",
+        "beholderAnimation" : "fadeIn",
+        "buttonText": "Next",
+        "story": "Hey, what do you mean by that?",
+        "next" : "D2S106"
+    }, 
+    "D2S106": 
+    {
+        "buttonText": "Next", 
+        "namePlate": "Moxanimous", 
+        "story": "Before you can clarify, one of the other players calls out to Moxanimous: \"Hey, Moxie, coach says your bicycle kick is looking killer!\"",
+        "beholder": "mox",
+        "beholderPos" : "right",
+		"beholderExp" : "neutral",
+        "bg": "SoccerField",
+        "namePlate": "Moxanimous",
+        "beholderAnimation" : "fadeIn",
+        "next" : "D2S107"
+    }, 
+    "D2S107": 
+    {
+        "beholder" : "mox",
+        "bg" : "SoccerField",
+        "beholderPos" : "right",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "buttonText" : "Next", 
+        "story" : "Moxanimous gives you a wave with an eye-stalk, and hustles back into position.",
+        "next" : "D2S200"
+    },
+    "D2S108": 
+    {
+        "bg": "SoccerField",
+        "buttonText": "Next", 
+        "story": "You steal a glance, but don't slow down to watch. You don't want to be called a pervert for gawking at people.",
+        "next" : "D2S200"
+    },
+    "D2S200": 
+    {
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "You need to approach your date for the dance by tomorrow. In light of this, your English lessons hold little attraction.",
+        "next" : "D2S201"
+    }, 
+    "D2S201": 
+    {
+        "bg": "Classroom",
+        "selection" : 
+		{
+			"Pay attention. This is no time to get sloppy." : "D2S202",
+			"Feign interest and continue scheming." : "D2S206"
+		}
+    }, 
+    "D2S202": 
+    {
+    	"beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeInLeft",
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "The sight of Bethelzed, sitting in the front row, taking studious notes, inspires something academic in you. You decide to pay attention.",
+        "next" : "D2S203"
+    }, 
+    "D2S203": 
+    {
+    	"beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "But it's Shakespeare. Ugh. Today you're reading Act 5 of Henry VI in class. You can't recall anything from the first four acts.",
+        "next" : "D2S204"
+    }, 
+    "D2S204": 
+    {
+    	"beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "The teacher prepares to call on Bethelzed to read aloud. Bethelzed blushes and shirks away from the duty, so you volunteer, and deliver your lines with surprising ease.",
+        "next" : "D2S205"
+    }, 
+    "D2S205": 
+    {
+    	"beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "Bethelzed says nothing, but you can see gratitude in those eye-stalks.",
+        "next" : "D2S300"
+    },
+    "D2S206": 
+    {
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "More pressing things than Shakespeare cloud your mind. After all, he got his. You pretend to take notes and work on your various schemes instead.",
+        "next" : "D2S300"
+    },
+    "D2S300": 
+    {
+        "bg": "Lunchroom", 
+        "buttonText": "Next", 
+        "story": "Today, at lunch, you expected another agonizing decision about who to sit with.",
+        "next" : "D2S301"
+    }, 
+    "D2S301": 
+    {
+        "bg": "Lunchroom", 
+        "buttonText": "Next", 
+        "story": "Err... whom to sit with?",
+        "next" : "D2S302"
+    }, 
+    "D2S302": 
+    {
+    	"beholder" : "siri",
+        "beholderPos" : "right",
+		"beholderExp" : "angry1",
+		"beholderAnimation" : "fadeInRight",
+        "bg": "Lunchroom", 
+        "buttonText": "Next", 
+        "story": "Anyway, before you can scan the tables, Siriak the Rapid bumps into you. You hear the jingle of car keys.",
+        "next" : "D2S303"
+    }, 
+    "D2S303": 
+    {
+        "beholder" : "siri",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Lunchroom", 
+        "buttonText": "Next", 
+        "namePlate": "Siriak the Rapid", 
+        "story": "Hey, I'm going to drive over to the gas station and get some grub. The food here sucks. Wanna come?",
+        "next" : "D2S304"
+    }, 
+    "D2S304": 
+    {
+        "beholder" : "siri",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"selection" : 
+		{
+			"Totes!" : "D2S305",
+			"We aren't supposed to leave school grounds..." : "D2S309"
+		},
+		"namePlate" : ":name:",
+        "bg": "Lunchroom"
+    }, 
+    "D2S305": 
+    {
+    	"beholder" : "siri",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "GasStation", 
+        "buttonText": "Next", 
+        "story": "You motor over to the gas station without incident. To your surprise, Siriak the Rapid stays in the car.",
+        "next" : "D2S306"
+    }, 
+    "D2S306": 
+    {
+        "beholder" : "siri",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "GasStation", 
+        "buttonText": "Next", 
+        "namePlate": "Siriak the Rapid",
+        "story": "Hey, Is there any way you could, like, buy a six pack for me? You'll never get carded.",
+        "next" : "D2S307"
+    }, 
+    "D2S307": 
+    {
+        "bg": "GasStation", 
+        "buttonText": "Next", 
+        "story": "Before you know what you're doing, you're walking out of the gas station carrying a six-pack of beer. You used the change to buy yourself an energy drink. You are trembling with the might of your deception.",
+        "next" : "D2S308"
+    }, 
+    "D2S308": 
+    {
+    	"beholder" : "siri",
+        "beholderPos" : "center",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "GasStation", 
+        "buttonText": "Next", 
+        "story": "Siriak the Rapid eyes the beer as though it were an ingot of pure silver. You can see that you've done well.",
+        "next" : "D2S400"
+    },
+    "D2S309": 
+    {
+    	"beholder" : "siri",
+        "beholderPos" : "center",
+		"beholderExp" : "angry2",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Lunchroom",
+        "buttonText": "Next", 
+        "story": "Siriak the Rapid eyes the beer as though it were an ingot of pure silver. You can see that you've done well.",
+        "next" : "D2S400"
+    },
+    "D2S400": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "After school, you break from your usual routine and head for the mall. What will win you a date, more than clever words or shared misadventures, is a token of your affection. You've got just enough saved to buy something thoughtful.",
+        "next" : "D2S401"
+    }, 
+    "D2S401": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "You only have enough for one, though. So think hard.",
+        "next" : "D2S402"
+    }, 
+    "D2S402": 
+    {
+        "bg": "StoreInterior",
+        "selection" : 
+		{
+			"Electronic Music Compilation" : "D2S403",
+			"Battery Powered Mini-Vacuum" : "D2S404",
+			"Dating-Sim Walkthrough" : "D2S405",
+			"Chocolates" : "D2S406",
+			"Fuzzy Dice" : "D2S407"
+		}
+    }, 
+    "D2S403": 
+    {
+        "bg": "StoreInterior",
+        "buttonText": "Next", 
+        "story": "This looks good. It looks trendy.",
+        "plotPoint" : 
+        {
+         	"purchase" : "Electronic Music Compilation"
+        },
+        "next" : "D2S408"
+    }, 
+    "D2S404": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "This could be good... for crumbs. Or whatever.",
+        "plotPoint" : 
+        {
+         	"purchase" : "Battery Powered Mini-Vacuum"
+        },
+        "next" : "D2S408"
+    }, 
+    "D2S405": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "A sticker on the cover reads \"Don't get any ideas\"",
+        "plotPoint" : 
+        {
+         	"purchase" : "Dating-Sim Walkthrough"
+        },
+        "next" : "D2S408"
+    }, 
+    "D2S406": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "Can't go wrong with chocolates, right? ",
+        "plotPoint" : 
+        {
+         	"purchase" : "Chocolates"
+        },
+        "next" : "D2S408"
+    }, 
+    "D2S407": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "Are you sure about this?",
+        "plotPoint" : 
+        {
+         	"purchase" : "Fuzzy Dice"
+        },
+        "next" : "D2S408"
+    },
+    "D2S408": 
+    {
+        "bg": "StoreInterior", 
+        "buttonText": "Next", 
+        "story": "You leave feeling positive about your decision.",
+        "next" : "DAY3"
+    },
+    "DAY3": 
+    {
+        "bg": "day3", 
+        "buttonText": "Next", 
+        "next" : "D3S100"
+    },
+    "D3S100": 
+    {
+        "bg": "Classroom", 
+        "buttonText": "Next", 
+        "story": "This is it. You've waited too long already, really. The Big Dance is tonight. It's time to make your move. Class hasn't started yet. Who are you looking for?",
+        "next" : "D3S101"
+    }, 
+    "D3S101": 
+    {
+        "bg": "Classroom",
+        "selection" : 
+		{
+			"Moxanimous" : "D3S102",
+			"Bethelzed" : "D3S103",
+			"Siriak the Rapid" : "D3S104"
+		}
+    }, 
+    "D3S102": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Next", 
+        "namePlate": "Moxanimous", 
+        "story": "Hey, :name: What's on your mind?",
+        "next" : "M01"
+    }, 
+    "D3S103": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "buttonText": "Next", 
+        "namePlate": "Bethelzed", 
+        "story": "Oh, :name: Why do you look so worried?",
+        "next" : "B01"
+    },
+    "D3S104": 
+    {
+        "beholder" : "siri",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Lunchroom", 
+        "buttonText": "Next", 
+        "namePlate": "Siriak the Rapid",
+        "story": "What is it, :name:?",
+        "next" : "S01"
+    },
+    "M00": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+        "bg": "SoccerField",
+        "conditionalSelection" : 
+		{
+			"condition" : 
+			{
+				"purchase" : "Electronic Music Compilation"
+			},
+			"constants" : 
+			{
+				"How do you like soccer?" : "M08",
+				"Do you like dancing?" : "M08"
+			},
+			"ifConditionTrue" :
+			{
+				"So I was wondering if you could show me that killer bicycle kick sometime..." : "M01"
+			}
+		}
+
+    }
 }
