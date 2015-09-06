@@ -17,11 +17,17 @@
 
         filterPass: {
           computed: "filtron(story)" 
+        },
+
+        item: {
+          type: String,
+          value: ""
         }
       },
 
       filtron: function(story) {
         story = story.replace(":name:", localStorage.getItem('playerName'));
+        story = story.replace(":item:", localStorage.getItem(this.item));
         return story
       },
 

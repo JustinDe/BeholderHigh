@@ -34,10 +34,10 @@
       },
 
       handleResponse: function(request) {
-          console.log("handleresponse");
-          console.log(request.detail.response);
+          //console.log("handleresponse");
+          //console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S100"; //Change this to be dynamically the first object in the JSON load
+          this.next = "M00"; //Change this to be dynamically the first object in the JSON load
       },
 
       toArray: function(obj) {
@@ -179,7 +179,27 @@
         }
         else
         {
-          document.querySelector('multi-selector').conditionalSelection = undefined;
+          document.querySelector('multi-selector').conditionalSelection = {};
+        }
+
+        if(this.script[this.next].conditionalStory != undefined)
+        {
+          var cStory = this.script[this.next].conditionalStory;
+          if(localStorage.getItem(Object.keys(cStory.condition)[0]) == cStory.condition[Object.keys(cStory.condition)[0]])
+          {
+            document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionTrue.item;
+            document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionTrue.story;
+            document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionTrue.buttonText;
+            document.querySelector('select-box').next = this.script[this.next].conditionalStory.ifConditionTrue.next;
+          }
+          else
+          {
+            document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionTrue.item;
+            document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionFalse.story;
+            document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionFalse.buttonText;
+            document.querySelector('select-box').next = this.script[this.next].conditionalStory.ifConditionFalse.next;
+          }
+          
         }
       },
 
@@ -187,7 +207,10 @@
         //var testArray = JSON.stringify(["Pick up your tray and sit with Bethelzed.", "Pick up your tray and sit with Siriak the Rapid."]);
         localStorage.clear();
         localStorage.setItem('playerName', 'Justin'); //this is teporary until I get a playerName screen
-        localStorage.setItem('purchase', 'Electronic Music Compilation');
+        //localStorage.setItem('mox-kick', 'known');
+        //localStorage.setItem('mox-gym', 'true');
+        localStorage.setItem('purchase', 'Dating-Sim Walkthrough');
+        //localStorage.setItem('purchase', 'Fart');
         //localStorage.setItem('lunchroom', testArray);
       },
       

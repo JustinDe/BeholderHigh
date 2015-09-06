@@ -370,7 +370,11 @@
 		"beholder" : "mox",
 		"beholderPos" : "center",
 		"beholderExp" : "shy",
-		"beholderAnimation" : "fadeIn"
+		"beholderAnimation" : "fadeIn",
+		"plotPoint" : 
+        {
+         	"mox-gym" : "true"
+        }
 	},
 	"D1S304" :
 	{
@@ -495,6 +499,10 @@
         "bg": "SoccerField",
         "namePlate": "Moxanimous",
         "beholderAnimation" : "fadeIn",
+        "plotPoint" : 
+        {
+         	"mox-kick" : "known"
+        },
         "next" : "D2S107"
     }, 
     "D2S107": 
@@ -815,7 +823,7 @@
         "bg": "Library", 
         "buttonText": "Next", 
         "namePlate": "Bethelzed", 
-        "story": "Oh, :name: Why do you look so worried?",
+        "story": "Oh, :name:. Why do you look so worried?",
         "next" : "B01"
     },
     "D3S104": 
@@ -840,7 +848,7 @@
 		{
 			"condition" : 
 			{
-				"purchase" : "Electronic Music Compilation"
+				"mox-kick" : "known"
 			},
 			"constants" : 
 			{
@@ -852,6 +860,188 @@
 				"So I was wondering if you could show me that killer bicycle kick sometime..." : "M01"
 			}
 		}
+    },
+    "M01": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "right",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeInRight",
+        "bg": "SoccerField",
+        "buttonText": "Next", 
+        "namePlate": "Moxanimous", 
+        "story": "I don't know, :name:. Do you think you can keep up with me?",
+        "next" : "M02"
+    }, 
+    "M02": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "namePlate": ":name:", 
+        "conditionalStory" : 
+		{
+			"condition" : 
+			{
+				"mox-gym" : "true"
+			},
+			"ifConditionTrue" : 
+			{
+				"story": "Actually, I've been working out.",
+				"next" : "M03",
+				"buttonText": "Next"
+			},
+			"ifConditionFalse" :
+			{
+				"story": "Maybe not...",
+				"next" : "M04",
+				"buttonText": "Next"
+			}
+		}
+    }, 
+    "M03": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Success", 
+        "namePlate": "Moxanimous", 
+        "story": "Yeah, I thought I saw you in the gym the other day. So hey, how about this dance?",
+        "next" : "MOXWIN"
+    }, 
+    "M04": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "angry",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Next", 
+        "namePlate": "Moxanimous", 
+        "story": "What's this about, :name:?",
+        "next" : "M05"
+    }, 
+    "M05": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Next", 
+        "namePlate": ":name:",
+        "conditionalStory" : 
+		{
+			"condition" : 
+			{
+				"purchase" : "Electronic Music Compilation"
+			},
+			"ifConditionTrue" : 
+			{
+				"item" : "purchase",
+				"story": "I was at the mall last night, and... well, you said you needed some workout music... I got you a :item:",
+				"next" : "M06",
+				"buttonText": "Next"
+			},
+			"ifConditionFalse" :
+			{
+				"item" : "purchase",
+				"story": "I got you this... :item:",
+				"next" : "M07",
+				"buttonText": "Next"
+			}
+		}
+        
+    }, 
+    "M06": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Success", 
+        "namePlate": "Moxanimous", 
+        "story": ":name:, this is fantastic! Hey, you should come with me to the Big Dance, we can show these softies how it's done!",
+        "next" : "MOXWIN"
+    }, 
+    "M07": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Rejected", 
+        "namePlate": "Moxanimous",
+        "story": "This is a weird present, :name:. You're a weird little guy.",
+        "next" : "FAILURE"
+    }, 
+    "M08": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "SoccerField", 
+        "buttonText": "Next", 
+        "namePlate": "Moxanimous", 
+        "story": "That's a weird question. Are you feeling alright?",
+        "next" : "M09"
+    }, 
+    "M09": 
+    {
+       "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+        "bg": "SoccerField", 
+        "buttonText": "Next", 
+        "namePlate": ":name:", 
+        "conditionalStory" : 
+		{
+			"condition" : 
+			{
+				"mox-gym" : "true"
+			},
+			"ifConditionTrue" : 
+			{
+				"story": "I'm still a little sore from my last workout.",
+				"next" : "M04",
+				"buttonText": "Next"
+			},
+			"ifConditionFalse" :
+			{
+				"story": "I'm a little faint actually.",
+				"next" : "M10",
+				"buttonText": "Next"
+			}
+		}
+    }, 
+    "M10": 
+    {
+        "beholder" : "mox",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+        "bg": "SoccerField", 
+        "buttonText": "Rejected", 
+        "namePlate": "Moxanimous", 
+        "story": "Maybe you ought to go home, :name:. Or see the nurse.",
+        "next" : "FAILURE"
+    },
+    "MOXWIN" :
+    {
+    	"bg" : "mox-splash",
+    	"story" : "True power is slow dancing with someone who could beat you senseless."
+    },
 
+
+    "FAILURE" :
+    {
+    	"bg" : "bad-splash",
+    	"story" : "It looks like you'll be going to the Big Dance after all. And you won't be alone..."
     }
 }

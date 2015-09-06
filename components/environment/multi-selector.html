@@ -89,18 +89,36 @@
         }
       },
       conditionalSelectionBuild: function(cSelection) {
-        if(cSelection)
+        if(Object.keys(this.conditionalSelection).length != 0)
         {
           var conditionKey = Object.keys(cSelection.condition)[0];
           var conditionValue = cSelection.condition[conditionKey];
-          console.log(conditionKey)
+          var constantKeysArr = Object.keys(cSelection.constants);
+          var ifConditionTrueKeysArr = Object.keys(cSelection.ifConditionTrue);
+          var outPutOptions = constantKeysArr;
+          if(localStorage.getItem(conditionKey) == conditionValue)
+          {
+            for(var i = 0; i < ifConditionTrueKeysArr.length; i++)
+            {
+              outPutOptions.push(ifConditionTrueKeysArr[i]);
+            }
+          }
+          return outPutOptions
         }
-        //var constantKeys = 
       },
 
       conditionalbuttonClick: function()
       {
-        document.querySelector('data-house').next = this.selections[event.target.innerHTML];
+        var ifConditionTrueKeysArr = Object.keys(this.conditionalSelection.ifConditionTrue);
+        var allOptions = this.conditionalSelection.constants
+        //console.log(allOptions);
+        for(var i = 0; i < ifConditionTrueKeysArr.length; i++)
+        {
+          //console.log(this.conditionalSelection.ifConditionTrue[ifConditionTrueKeysArr[i]]);
+          allOptions[ifConditionTrueKeysArr[i]] = this.conditionalSelection.ifConditionTrue[ifConditionTrueKeysArr[i]];
+        }
+        //console.log(allOptions);
+        document.querySelector('data-house').next = allOptions[event.target.innerHTML];
       },
 
       ready : function() {
