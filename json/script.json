@@ -395,7 +395,11 @@
 		"buttonText" : "Next",
 		"beholder" : "beth",
 		"beholderPos" : "left",
-		"beholderExp" : "neutral"
+		"beholderExp" : "neutral",
+		"plotPoint" :
+		{
+			"beth-studied" : "true"
+		}
 	},
 	"D1S306" :
 	{
@@ -417,7 +421,11 @@
 		"beholder" : "siri",
 		"beholderPos" : "center",
 		"beholderExp" : "neutral",
-		"beholderAnimation" : "fadeIn"
+		"beholderAnimation" : "fadeIn",
+		"plotPoint" :
+		{
+			"siri-smoked" : "true"
+		}
 	},
 	"DAY2":
 	{
@@ -580,6 +588,10 @@
         "bg": "Classroom", 
         "buttonText": "Next", 
         "story": "Bethelzed says nothing, but you can see gratitude in those eye-stalks.",
+        "plotPoint" :
+        {
+        	"beth-class" : "true"
+        	},
         "next" : "D2S300"
     },
     "D2S206": 
@@ -812,7 +824,7 @@
         "buttonText": "Next", 
         "namePlate": "Moxanimous", 
         "story": "Hey, :name: What's on your mind?",
-        "next" : "M01"
+        "next" : "M00"
     }, 
     "D3S103": 
     {
@@ -824,7 +836,7 @@
         "buttonText": "Next", 
         "namePlate": "Bethelzed", 
         "story": "Oh, :name:. Why do you look so worried?",
-        "next" : "B01"
+        "next" : "B00"
     },
     "D3S104": 
     {
@@ -836,7 +848,7 @@
         "buttonText": "Next", 
         "namePlate": "Siriak the Rapid",
         "story": "What is it, :name:?",
-        "next" : "S01"
+        "next" : "S00"
     },
     "M00": 
     {
@@ -1037,7 +1049,207 @@
     	"bg" : "mox-splash",
     	"story" : "True power is slow dancing with someone who could beat you senseless."
     },
-
+        "B00": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+        "bg": "Library",
+        "conditionalSelection" : 
+		{
+			"condition" : 
+			{
+				"beth-class" : "true"
+			},
+			"constants" : 
+			{
+				"How about we forget the books and go dancing?" : "B08",
+				"Can I copy your homework?" : "B08"
+			},
+			"ifConditionTrue" :
+			{
+				"You're beautiful and therefore to be wooed; You are Beholder, and therefore to be won." : "B01"
+			}
+		}
+    },
+    "B01": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library",
+        "buttonText": "Next", 
+        "namePlate": "Bethelzed", 
+        "story": "You know, :name:, I thought you did a really good job in class the other day.",
+        "next" : "B02"
+    }, 
+    "B02": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "namePlate": ":name:", 
+        "conditionalStory" : 
+		{
+			"condition" : 
+			{
+				"beth-studied" : "true"
+			},
+			"ifConditionTrue" : 
+			{
+				"story": "Thanks! Most people don't seem to care much about their studies here...",
+				"next" : "B03",
+				"buttonText": "Next"
+			},
+			"ifConditionFalse" :
+			{
+				"story": "I hope I never have to do that again.",
+				"next" : "B04",
+				"buttonText": "Next"
+			}
+		}
+    }, 
+    "B03": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "buttonText": "Success", 
+        "namePlate": "Bethelzed", 
+        "story": "You know, I was going to stay in tonight, but maybe we deserve a night off. Do you want to go to the Big Dance?",
+        "next" : "BETHWIN"
+    }, 
+    "B04": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "angry",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "buttonText": "Next", 
+        "namePlate": "Bethelzed", 
+        "story": "God, :name:, you're hopeless. So did you want to ask me something?",
+        "next" : "B05"
+    }, 
+    "B05": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+		"beholderAnimation" : "fadeInLeft",
+        "bg": "Library", 
+        "buttonText": "Next", 
+        "namePlate": ":name:",
+        "conditionalStory" : 
+		{
+			"condition" : 
+			{
+				"purchase" : "Dating-Sim Walkthrough"
+			},
+			"ifConditionTrue" : 
+			{
+				"item" : "purchase",
+				"story": "No. Actually, I picked this :item: up for you at the mall. That Dating-Sim sounds pretty complex.",
+				"next" : "B06",
+				"buttonText": "Next"
+			},
+			"ifConditionFalse" :
+			{
+				"item" : "purchase",
+				"story": "I got you this... :item:",
+				"next" : "B07",
+				"buttonText": "Next"
+			}
+		}
+        
+    }, 
+    "B06": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "happy",
+		"beholderAnimation" : "fadeInLeft",
+        "bg": "Library", 
+        "buttonText": "Success", 
+        "namePlate": "Bethelzed", 
+        "story": "Oh, :name:, that's so sweet! I was going to play when I got home tonight, but there's a dance tonight, isn't there? Do you... maybe... want to go with me?",
+        "next" : "BETHWIN"
+    }, 
+    "B07": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "shy",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "buttonText": "Rejected", 
+        "namePlate": "Bethelzed",
+        "story": "Oh... Thanks, :name:. I guess. I have to get to class...",
+        "next" : "FAILURE"
+    }, 
+    "B08": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "angry",
+		"beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "buttonText": "Next", 
+        "namePlate": "Bethelzed", 
+        "story": "Wh- huh? You're joking right?",
+        "next" : "B09"
+    }, 
+    "B09": 
+    {
+       "beholder" : "beth",
+        "beholderPos" : "left",
+		"beholderExp" : "neutral",
+        "beholderAnimation" : "fadeInLeft",
+        "bg": "Library", 
+        "buttonText": "Next", 
+        "namePlate": ":name:", 
+        "conditionalStory" : 
+		{
+			"condition" : 
+			{
+				"beth-studied" : "true"
+			},
+			"ifConditionTrue" : 
+			{
+				"story": "Of course! I know you take this stuff seriously.",
+				"next" : "B04",
+				"buttonText": "Next"
+			},
+			"ifConditionFalse" :
+			{
+				"story": "Umm...",
+				"next" : "B10",
+				"buttonText": "Next"
+			}
+		}
+    }, 
+    "B10": 
+    {
+        "beholder" : "beth",
+        "beholderPos" : "center",
+		"beholderExp" : "angry",
+        "beholderAnimation" : "fadeIn",
+        "bg": "Library", 
+        "buttonText": "Rejected", 
+        "namePlate": "Bethelzed", 
+        "story": "You ought to take school more seriously, :name:. I have to go.",
+        "next" : "FAILURE"
+    },
+    "BETHWIN" :
+    {
+    	"bg" : "beth-splash",
+    	"story" : "Thirst for knowledge. Hunger for power. No feast is fine enough."
+    },
 
     "FAILURE" :
     {
