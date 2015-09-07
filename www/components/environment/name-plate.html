@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="name-plate">
+
+  <template>
+    <section>{{filterPass}}</section>
+  </template>
+
+  <script>
+    Polymer({
+      is: "name-plate",
+      properties: {
+        name: {
+          type: String,
+          value: "Test"
+        },
+
+        filterPass: {
+          computed: "filtron(name)" 
+        }
+      },
+
+      filtron: function(name) {
+        name = name.replace(":name:", localStorage.getItem('playerName'));
+        return name
+      },
+
+      ready : function() {
+      }
+    });
+  </script>
+  <!--
+  text-block API
+  
+  name:
+    Free text for what ever is fed into the name plate
+
+  -->
+</dom-module>

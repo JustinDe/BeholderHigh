@@ -1,0 +1,61 @@
+body 
+{
+	line-height: 1;
+	font-family: 'Coming Soon', cursive;
+	line-height: 1.4;
+	background:#000000;
+}
+bg-stage img
+{
+	width: 640px;
+	height: 340px;
+}
+
+.textArea
+{
+	position: fixed;
+    bottom: 0;
+    width: 640px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.next
+{
+	float: right;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	background: CornflowerBlue;
+	padding: 8px 24px;
+	text-decoration: none;
+}
+
+multi-selector li
+{
+	float: left;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	background: CornflowerBlue;
+	padding: 8px 24px;
+	text-decoration: none;
+}
+
+text-block section
+{
+	color: #fff;
+}
+
+name-plate section
+{
+	color: #fff;
+}
+
+beholder-container img
+{
+	position: fixed;
+    top: 0;
+    left: 220px;
+    width: 200px;
+    height: 200px;
+}

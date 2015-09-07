@@ -1,0 +1,51 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="bg-stage">
+
+  <template>
+    <img src="{{bgImg}}">
+  </template>
+
+  <script>
+    Polymer({
+      is: "bg-stage",
+      properties: {
+        bg: {
+          type: String,
+          value: "Classroom",
+        },
+        bgImg: {
+          type: String,
+          computed: "buildImg(bg)" //calls the buildImg function and concats img path and {{bg}} value
+        }
+      },
+      
+      buildImg : function(bg) {
+        return "images/bg/"+ bg +".jpg";
+      },
+
+      ready : function() {
+        console.log("W: " + window.innerWidth);
+        console.log("H: " + window.innerHeight);
+      }
+    });
+  </script>
+  <!--
+  bg-stage API
+  
+  bg:
+    Classroom (defualt)
+    Dumpster
+    GasStation
+    Gym
+    Library
+    Lunchroom
+    SoccerField
+    StoreInterior
+    siri-splash
+    beth-splash
+    mox-splash
+    bad-splash
+
+  -->
+</dom-module>

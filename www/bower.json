@@ -1,0 +1,17 @@
+{
+  "name": "BeholderHigh",
+  "version": "0.0.0",
+  "description": "A rewrite of Beholder High in Polymer",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.0.3"
+  }
+}

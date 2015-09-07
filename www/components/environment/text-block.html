@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="text-block">
+
+  <template>
+    <section>{{filterPass}}</section>
+  </template>
+
+  <script>
+    Polymer({
+      is: "text-block",
+      properties: {
+        story: {
+          type: String,
+          value: "Test"
+        },
+
+        filterPass: {
+          computed: "filtron(story)" 
+        },
+
+        item: {
+          type: String,
+          value: ""
+        }
+      },
+
+      filtron: function(story) {
+        story = story.replace(":name:", localStorage.getItem('playerName'));
+        story = story.replace(":item:", localStorage.getItem(this.item));
+        return story
+      },
+
+      ready : function() {
+      }
+    });
+  </script>
+  <!--
+  text-block API
+  
+  story:
+    Free text for what ever is fed into the story.
+
+  -->
+</dom-module>

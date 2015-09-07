@@ -1,0 +1,9 @@
+{
+  "tabs": [],
+  "rootView": {
+    "location": "http://localhost/index.html"
+  },
+  "configuration": {
+    "extra_response_headers": {}
+  }
+}
