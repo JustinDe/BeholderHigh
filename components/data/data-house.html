@@ -34,8 +34,8 @@
       },
 
       handleResponse: function(request) {
-          //console.log("handleresponse");
-          //console.log(request.detail.response);
+          console.log("handleresponse");
+          console.log(request.detail.response);
           this.script = request.detail.response;
           this.next = "D3S101"; //Change this to be dynamically the first object in the JSON load
       },
@@ -213,6 +213,9 @@
         //localStorage.setItem("beth-class","true");
         //localStorage.setItem("beth-studied", "true");
         //localStorage.setItem("purchase", "Dating-Sim Walkthrough"); //beth
+        //localStorage.setItem("siri-smoked", "true");
+        localStorage.setItem("siri-ditched", "true");
+        //localStorage.setItem("purchase", "Fuzzy Dice"); //siri
         //localStorage.setItem('purchase', 'Fart'); //failure
       },
       
