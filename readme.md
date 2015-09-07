@@ -8,7 +8,11 @@ To-Do:
 * Style - Mobile only?
 * Clean up weird indentations - lint? (can you do that with polymer?)
 * QA
+<<<<<<< HEAD
 * branchy
+=======
+* branch
+>>>>>>> master
 
 Wish List:
 * Grunt build
