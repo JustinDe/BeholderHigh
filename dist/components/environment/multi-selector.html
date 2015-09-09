@@ -60,13 +60,13 @@
             localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify([this.uniqueSelectionArr[0].value]));
           }
         }
-        
+        document.querySelector('multi-selector').style.display = "none";
         document.querySelector('data-house').next = this.selections[event.target.innerHTML];
       },
       filterUniques: function(selections, uniqueSelection) {
         selectionsKeys = Object.keys(selections);
         //console.log(selectionsKeys);
-        if(uniqueSelection) // will always be true and will cause null -- fix this later maybe with t/f
+        if(Object.keys(uniqueSelection).length > 0) // will always be true and will cause null -- fix this later maybe with t/f
         {
           var itmsToFilter = JSON.parse(localStorage.getItem(this.uniqueSelectionArr[0].name));
           for(var i = 0; i < itmsToFilter.length; i++)
@@ -81,10 +81,12 @@
             }
           }
           //console.log(selectionsKeys);
+          document.querySelector('multi-selector').style.display = "block";
           return selectionsKeys
         }
         else
         {
+          document.querySelector('multi-selector').style.display = "block";
           return selectionsKeys
         }
       },
@@ -103,6 +105,7 @@
               outPutOptions.push(ifConditionTrueKeysArr[i]);
             }
           }
+          document.querySelector('multi-selector').style.display = "block";
           return outPutOptions
         }
       },
@@ -118,10 +121,12 @@
           allOptions[ifConditionTrueKeysArr[i]] = this.conditionalSelection.ifConditionTrue[ifConditionTrueKeysArr[i]];
         }
         //console.log(allOptions);
+        document.querySelector('multi-selector').style.display = "none";
         document.querySelector('data-house').next = allOptions[event.target.innerHTML];
       },
 
       ready : function() {
+        document.querySelector('multi-selector').style.display = "none";
       }
     });
   </script>

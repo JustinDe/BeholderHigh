@@ -103,10 +103,12 @@
         if(this.script[this.next].buttonText != undefined)
         {
           document.querySelector('select-box').text = this.script[this.next].buttonText;
+          document.querySelector('select-box').style.display = "block";
         }
         else
         {
-          document.querySelector('select-box').text = ""; 
+          document.querySelector('select-box').text = "";
+          document.querySelector('select-box').style.display = "none";
         }
 
         if(this.script[this.next].beholderAnimation != undefined)
