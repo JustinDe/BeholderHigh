@@ -66,7 +66,7 @@
       filterUniques: function(selections, uniqueSelection) {
         selectionsKeys = Object.keys(selections);
         //console.log(selectionsKeys);
-        if(Object.keys(uniqueSelection).length > 0) // will always be true and will cause null -- fix this later maybe with t/f
+        if(this.uniqueSelection) // will always be true and will cause null -- fix this later maybe with t/f
         {
           var itmsToFilter = JSON.parse(localStorage.getItem(this.uniqueSelectionArr[0].name));
           for(var i = 0; i < itmsToFilter.length; i++)
@@ -127,6 +127,7 @@
 
       ready : function() {
         document.querySelector('multi-selector').style.display = "none";
+        alert("start");
       }
     });
   </script>

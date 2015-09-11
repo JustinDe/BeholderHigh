@@ -18,11 +18,11 @@
 	<link rel="import" href="components/characters/beholder.html">
 
 	<!-- Import Environments -->
-	<link rel="import" href="components/environment/bg-stage.html">
-	<link rel="import" href="components/environment/text-block.html">
-	<link rel="import" href="components/environment/select-box.html">
-	<link rel="import" href="components/environment/multi-selector.html">
-	<link rel="import" href="components/environment/name-plate.html">
+	<link rel="import" href="components/ui/bg-stage.html">
+	<link rel="import" href="components/ui/text-block.html">
+	<link rel="import" href="components/ui/select-box.html">
+	<link rel="import" href="components/ui/multi-selector.html">
+	<link rel="import" href="components/ui/name-plate.html">
 
 	<!-- Steroids Requirements -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -44,9 +44,13 @@
 	<bg-stage></bg-stage>
 	<beholder-container></beholder-container>
 	<div class="textArea">
-		<name-plate></name-plate>
-		<text-block></text-block>
-		<select-box></select-box>
+		<div class="leftCol">
+			<name-plate></name-plate>
+			<text-block></text-block>
+		</div>
+		<div class="rightCol">
+			<select-box></select-box>
+		</div>
 		<multi-selector></multi-selector>	
 	</div>
 	
