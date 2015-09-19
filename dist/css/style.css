@@ -15,35 +15,36 @@ bg-stage img
 {
 	position: fixed;
     bottom: 0;
-    width: 640px;
+    width: 100%;
     background-color: rgba(0,0,0,0.3);
 }
 
 .next
 {
+	float: right;
 	font-size: 18px;
 	color: #fff;
 	font-weight: bold;
 	background: CornflowerBlue;
 	padding: 8px 24px;
 	text-decoration: none;
-	width: 100%;
+	width: 30%;
 }
 
 multi-selector
 {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 multi-selector ul
 {
-	list-style-type: none;
+	/*list-style-type: none;
     margin: 0;
   	padding: 0;
   	overflow-x: auto;
   	overflow-y: hidden;
   	white-space: nowrap;
-  	width: 100%;
+  	width: 100%;*/
 }
 
 multi-selector li
