@@ -1,6 +1,7 @@
 Rewriting Beholder High as a polymer app
 
 To-Do:
+* Rewrite localstorage dependancy to use data house
 * Set user name
 * Preload frame
 * New background images
