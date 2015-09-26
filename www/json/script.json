@@ -746,7 +746,7 @@
         "beholderPos": "center",
         "beholderExp": "neutral",
         "bg": "SoccerField",
-        "namePlate": ":name",
+        "namePlate": ":name:",
         "conditionalSelection": {
             "condition": {
                 "mox-kick": "known"

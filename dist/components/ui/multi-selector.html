@@ -41,24 +41,41 @@
         }
       },
       toArray: function(obj) {
-        return Object.keys(obj).map(function(key) {
-          return {name: key, value: obj[key]};
-        });
+        if(obj) {
+          return Object.keys(obj).map(function(key) {
+            return {name: key, value: obj[key]};
+          });
+        }
+        
       },
       buttonClick: function(event, detail, sender) {
         //console.log(this.selections[event.target.innerHTML]);
         //console.log(this.uniqueSelectionArr[0].name);
-        if(this.uniqueSelection)
-        {
-          if(localStorage.getItem(this.uniqueSelectionArr[0].name))
-          {
-            var tempArr = localStorage.getItem(this.uniqueSelectionArr[0].name);
-            localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify(tenter shikariempArr.concat([this.uniqueSelectionArr[0].value]))); //fuck
+        if(this.uniqueSelection) {
+          var tempUniqueSelectionStore = document.querySelector('data-house').uniqueSelectionStore
+          if(tempUniqueSelectionStore != undefined) {
+            console.log("uSS not empty");
+            console.log(tempUniqueSelectionStore);
+            tempUniqueSelectionStore[this.uniqueSelectionArr[0].name].push(this.uniqueSelectionArr[0].value);
+            document.querySelector('data-house').uniqueSelectionStore = tempUniqueSelectionStore;
           }
-          else
-          {
-            localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify([this.uniqueSelectionArr[0].value]));
+          else {
+            tempUniqueSelectionStore = {};
+            console.log("Setting uSS");
+            tempUniqueSelectionStore[this.uniqueSelectionArr[0].name] = [this.uniqueSelectionArr[0].value];
+            document.querySelector('data-house').uniqueSelectionStore = tempUniqueSelectionStore;
           }
+
+          //Dear god whyyyyy
+          // if(localStorage.getItem(this.uniqueSelectionArr[0].name))
+          // {
+          //   var tempArr = localStorage.getItem(this.uniqueSelectionArr[0].name);
+          //   localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify(tempArr.concat([this.uniqueSelectionArr[0].value]))); //fuck
+          // }
+          // else
+          // {
+          //   localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify([this.uniqueSelectionArr[0].value]));
+          // }
         }
         document.querySelector('multi-selector').style.display = "none";
         document.querySelector('data-house').next = this.selections[event.target.innerHTML];
@@ -66,9 +83,10 @@
       filterUniques: function(selections, uniqueSelection) {
         selectionsKeys = Object.keys(selections);
         //console.log(selectionsKeys);
-        if(this.uniqueSelection) // will always be true and will cause null -- fix this later maybe with t/f
+        if(uniqueSelection) // will always be true and will cause null -- fix this later maybe with t/f
         {
-          var itmsToFilter = JSON.parse(localStorage.getItem(this.uniqueSelectionArr[0].name));
+          //var itmsToFilter = JSON.parse(localStorage.getItem(this.uniqueSelectionArr[0].name));
+          var itmsToFilter = document.querySelector('data-house').uniqueSelectionStore[this.uniqueSelectionArr[0].name];
           for(var i = 0; i < itmsToFilter.length; i++)
           {
             //console.log("This is a unique filter case");

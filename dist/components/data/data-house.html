@@ -31,13 +31,16 @@
         plotPointArr: {
           computed: "toArray(plotPoint)"
         },
+        uniqueSelectionStore: {
+          type: Object
+        }
       },
 
       handleResponse: function(request) {
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "D1S201"; //Change this to be dynamically the first object in the JSON load
+          this.next = "M01"; //Change this to be dynamically the first object in the JSON load
       },
 
       toArray: function(obj) {
@@ -217,7 +220,7 @@
         //localStorage.setItem("beth-studied", "true");
         //localStorage.setItem("purchase", "Dating-Sim Walkthrough"); //beth
         //localStorage.setItem("siri-smoked", "true");
-        localStorage.setItem("siri-ditched", "true");
+        //localStorage.setItem("siri-ditched", "true");
         //localStorage.setItem("purchase", "Fuzzy Dice"); //siri
         //localStorage.setItem('purchase', 'Fart'); //failure
       },
@@ -226,10 +229,4 @@
     
     
   </script>
-  <!--
-  select-box API
-  
-  script:
-    Free text for what ever is fed into the story.
-  -->
 </dom-module>
