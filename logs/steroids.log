@@ -822,3 +822,9 @@
 {"datetime":1443307763735,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-09-26T22:49:23.740Z"}
 {"datetime":1443307819751,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-09-26T22:50:19.766Z"}
 {"datetime":1443307819762,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-09-26T22:50:19.772Z"}
+{"datetime":1444497965008,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-10-10T17:26:07.242Z"}
+{"datetime":1444497965030,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-10-10T17:26:07.245Z"}
+{"datetime":1444498007360,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-10-10T17:26:49.568Z"}
+{"datetime":1444498007380,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-10-10T17:26:49.570Z"}
+{"datetime":1445782582514,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-10-25T14:16:24.634Z"}
+{"datetime":1445782582536,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-10-25T14:16:24.637Z"}
