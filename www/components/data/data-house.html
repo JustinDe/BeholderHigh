@@ -164,10 +164,12 @@
         {
           console.log("This scene has a: selection");
           document.querySelector('multi-selector').selections = this.script[this.next].selection;
+          document.getElementById("selection_ul").style.display = "block";
         }
         else
         {
           document.querySelector('multi-selector').selections = undefined;
+          document.getElementById("selection_ul").style.display = "none";
         }
 
         if(this.script[this.next].uniqueSelection != undefined)

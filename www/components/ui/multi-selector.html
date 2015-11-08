@@ -2,7 +2,7 @@
 
 <dom-module id="multi-selector">
   <template>
-    <ul>
+    <ul id="selection_ul">
       <template is="dom-repeat" items="{{filteredSelections}}">
           <li on-click="buttonClick" class="pure-menu-list">{{item}}</li>   
       </template>

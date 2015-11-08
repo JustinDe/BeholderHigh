@@ -1,6 +1,6 @@
 {
     "SPLASH": {
-        "bg": "Classroom",
+        "bg": "Splash",
         "textEntry": {
             "key": "playerName",
             "next": "DAY1",
