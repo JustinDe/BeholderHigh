@@ -1,0 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="text-entry">
+
+  <template>
+    <input type="text" name="xx">
+  </template>
+
+  <script>
+    Polymer({
+      is: "text-entry",
+      properties: {
+        textSubmit: {
+          type: Object
+        }
+      },
+      ready : function() {
+        console.log("textSubmit: " + this.textSubmit.key);
+      }
+    });
+  </script>
+  <!--
+  text-entry API
+  
+  textSubmit:
+    Field name gets read and is key to value entered
+
+  -->
+</dom-module>

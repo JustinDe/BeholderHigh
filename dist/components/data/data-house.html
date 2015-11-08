@@ -40,7 +40,7 @@
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "M01"; //Change this to be dynamically the first object in the JSON load
+          this.next = "D3S101"; //Change this to be dynamically the first object in the JSON load
       },
 
       toArray: function(obj) {
@@ -69,6 +69,7 @@
 
         if(this.script[this.next].story != undefined)
         {
+          console.log("This scene has a: story");
           document.querySelector('text-block').story = this.script[this.next].story;
         }
         else
@@ -78,6 +79,7 @@
 
         if(this.script[this.next].namePlate != undefined)
         {
+          console.log("This scene has a: namePlate");
           document.querySelector('name-plate').name = this.script[this.next].namePlate;
         }
         else
@@ -87,6 +89,7 @@
 
         if(this.script[this.next].bg != undefined)
         {
+          console.log("This scene has a: bg");
           document.querySelector('bg-stage').bg = this.script[this.next].bg;
         }
         else
@@ -96,6 +99,7 @@
 
         if(this.script[this.next].next != undefined)
         {
+          console.log("This scene has a: next");
           document.querySelector('select-box').next = this.script[this.next].next;
         }
         else
@@ -105,6 +109,7 @@
 
         if(this.script[this.next].buttonText != undefined)
         {
+          console.log("This scene has a: buttonText");
           document.querySelector('select-box').text = this.script[this.next].buttonText;
           document.querySelector('select-box').style.display = "block";
         }
@@ -116,6 +121,7 @@
 
         if(this.script[this.next].beholderAnimation != undefined)
         {
+          console.log("This scene has a: beholderAnimation");
           document.querySelector('beholder-container').animation = this.script[this.next].beholderAnimation;
         }
         else
@@ -125,6 +131,7 @@
 
         if(this.script[this.next].beholderPos != undefined)
         {
+          console.log("This scene has a: beholderPos");
           document.querySelector('beholder-container').pos = this.script[this.next].beholderPos;
         }
         else
@@ -134,6 +141,7 @@
 
         if(this.script[this.next].beholderExp != undefined)
         {
+          console.log("This scene has a: beholderExp");
           document.querySelector('beholder-container').exp = this.script[this.next].beholderExp;
         }
         else
@@ -143,6 +151,7 @@
 
         if(this.script[this.next].beholder != undefined)
         {
+          console.log("This scene has a: beholder");
           document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
           document.querySelector('beholder-container').beholderContext = this.next;
         }
@@ -153,6 +162,7 @@
 
         if(this.script[this.next].selection != undefined)
         {
+          console.log("This scene has a: selection");
           document.querySelector('multi-selector').selections = this.script[this.next].selection;
         }
         else
@@ -162,8 +172,8 @@
 
         if(this.script[this.next].uniqueSelection != undefined)
         {
+          console.log("This scene has a: uniqueSelection");
           document.querySelector('multi-selector').uniqueSelection = this.script[this.next].uniqueSelection;
-          console.log("uniqueSelection")
         }
         else
         {
@@ -172,6 +182,7 @@
 
         if(this.script[this.next].plotPoint != undefined)
         {
+          console.log("This scene has a: plotPoint");
           document.querySelector('data-house').plotPoint = this.script[this.next].plotPoint;
         }
         else
@@ -181,6 +192,7 @@
 
         if(this.script[this.next].conditionalSelection != undefined)
         {
+          console.log("This scene has a: conditionalSelection");
           document.querySelector('multi-selector').conditionalSelection = this.script[this.next].conditionalSelection;
         }
         else
@@ -188,8 +200,21 @@
           document.querySelector('multi-selector').conditionalSelection = {};
         }
 
+        if(this.script[this.next].textEntry != undefined)
+        {
+          console.log("This scene has a: textEntry");
+          document.querySelector('text-entry').textSubmit = this.script[this.next].textEntry;
+          document.querySelector('text-entry').style.display = "block";
+        }
+        else
+        {
+          document.querySelector('text-entry').textSubmit = undefined;
+          document.querySelector('text-entry').style.display = "none";
+        }
+
         if(this.script[this.next].conditionalStory != undefined)
         {
+          console.log("This scene has a: conditionalStory");
           var cStory = this.script[this.next].conditionalStory;
           if(localStorage.getItem(Object.keys(cStory.condition)[0]) == cStory.condition[Object.keys(cStory.condition)[0]])
           {
@@ -197,13 +222,15 @@
             document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionTrue.story;
             document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionTrue.buttonText;
             document.querySelector('select-box').next = this.script[this.next].conditionalStory.ifConditionTrue.next;
+            document.querySelector('select-box').style.display = "block";
           }
           else
           {
-            document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionTrue.item;
+            document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionFalse.item;
             document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionFalse.story;
             document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionFalse.buttonText;
             document.querySelector('select-box').next = this.script[this.next].conditionalStory.ifConditionFalse.next;
+            document.querySelector('select-box').style.display = "block";
           }
           
         }

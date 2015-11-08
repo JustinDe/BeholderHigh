@@ -40,7 +40,7 @@
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "M01"; //Change this to be dynamically the first object in the JSON load
+          this.next = "SPLASH"; //Change this to be dynamically the first object in the JSON load
       },
 
       toArray: function(obj) {
@@ -200,6 +200,18 @@
           document.querySelector('multi-selector').conditionalSelection = {};
         }
 
+        if(this.script[this.next].textEntry != undefined)
+        {
+          console.log("This scene has a: textEntry");
+          document.querySelector('text-entry').textSubmit = this.script[this.next].textEntry;
+          document.querySelector('text-entry').style.display = "block";
+        }
+        else
+        {
+          document.querySelector('text-entry').textSubmit = undefined;
+          document.querySelector('text-entry').style.display = "none";
+        }
+
         if(this.script[this.next].conditionalStory != undefined)
         {
           console.log("This scene has a: conditionalStory");
@@ -227,7 +239,7 @@
       ready : function() {
         //var testArray = JSON.stringify(["Pick up your tray and sit with Bethelzed.", "Pick up your tray and sit with Siriak the Rapid."]);
         localStorage.clear();
-        localStorage.setItem('playerName', 'Justin'); //this is teporary until I get a playerName screen
+        //localStorage.setItem('playerName', 'Justin'); //this is teporary until I get a playerName screen
         //localStorage.setItem('mox-kick', 'known');
         //localStorage.setItem('mox-gym', 'true');
         //localStorage.setItem('purchase', 'Electronic Music Compilation'); //mox

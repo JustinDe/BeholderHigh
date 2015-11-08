@@ -1,6 +1,14 @@
 {
+    "SPLASH": {
+        "bg": "Classroom",
+        "textEntry": {
+            "key": "playerName",
+            "next": "DAY1",
+            "buttonText": "Start"
+        }
+    },
     "DAY1": {
-        "story": "Day 1",
+        "bg": "Day1",
         "next": "D1S102",
         "buttonText": "Next"
     },
@@ -372,7 +380,7 @@
         }
     },
     "DAY2": {
-        "story": "Day 2",
+        "bg": "Day2",
         "buttonText": "Next",
         "next": "D2S100"
     },
@@ -690,7 +698,7 @@
         "next": "DAY3"
     },
     "DAY3": {
-        "bg": "day3",
+        "bg": "Day3",
         "buttonText": "Next",
         "next": "D3S100"
     },
