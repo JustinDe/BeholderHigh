@@ -998,3 +998,16 @@
 {"datetime":1447000889945,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-08T16:41:31.863Z"}
 {"datetime":1447000919170,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-08T16:42:01.088Z"}
 {"datetime":1447000919178,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-08T16:42:01.092Z"}
+{"datetime":1447111889204,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-09T23:31:31.779Z"}
+{"datetime":1447111889212,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-09T23:31:31.782Z"}
+{"datetime":"2015-11-09T23:33:33.580Z","view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"info","message":"\"Uncaught TypeError: Cannot read property 'lunchroom' of undefined - undefined:undefined\"","timestamp":"2015-11-09T23:33:36.217Z"}
+{"datetime":1447511754889,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-14T14:35:57.498Z"}
+{"datetime":1447511754902,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-14T14:35:57.502Z"}
+{"datetime":1447512785676,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-14T14:53:05.712Z"}
+{"datetime":1447512785697,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-14T14:53:05.713Z"}
+{"datetime":1447512864916,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-14T14:54:24.958Z"}
+{"datetime":1447512864944,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-14T14:54:24.965Z"}
+{"datetime":1447517371661,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-14T16:09:31.727Z"}
+{"datetime":1447517371700,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-14T16:09:31.741Z"}
+{"datetime":1447517572496,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2015-11-14T16:12:52.528Z"}
+{"datetime":1447517572517,"view":"http://localhost/index.html","host":"192.168.56.1:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2015-11-14T16:12:52.530Z"}
