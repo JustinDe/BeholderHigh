@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="music-controller">
+
+  <template>
+  </template>
+
+  <script>
+    Polymer({
+      is: "music-controller",
+      properties: {
+        audio: {
+          type: String,
+          observer: "buildSrc"
+        },
+        musicSrc: {
+          type: String,
+          value: ""
+        }
+      },
+      
+      buildSrc : function(newValue,oldValue) {
+        if(document.getElementsByClassName("switchable-audio").length)
+        {
+          var previousAudio = document.getElementsByClassName("switchable-audio");
+          console.log("Removing previous audio element");
+          document.querySelector('music-controller').removeChild(previousAudio[0]);
+
+        }
+        audioController = document.createElement("audio");
+        audioController.className = "switchable-audio";
+        audioController.src = "audio/"+ newValue +".ogg";
+        audioController.autoplay = true;
+        audioController.loop = true;
+        audioController.controls = true; //Remove this when done
+        document.querySelector('music-controller').appendChild(audioController);
+      },
+
+      ready : function() {
+      }
+    });
+  </script>
+</dom-module>
