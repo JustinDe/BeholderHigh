@@ -31,22 +31,6 @@ bg-stage img
 	width: 30%;
 }
 
-multi-selector
-{
-	/*overflow: hidden;*/
-}
-
-multi-selector ul
-{
-	/*list-style-type: none;
-    margin: 0;
-  	padding: 0;
-  	overflow-x: auto;
-  	overflow-y: hidden;
-  	white-space: nowrap;
-  	width: 100%;*/
-}
-
 multi-selector li
 {
 	font-size: 18px;
@@ -110,7 +94,12 @@ beholder-container img
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+  and (orientation: landscape) 
+  {
+    bg-stage img 
+    {
+      width: 480px;
+    }
 
 }
 

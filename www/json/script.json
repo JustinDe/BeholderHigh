@@ -6,7 +6,7 @@
             "next": "DAY1",
             "buttonText": "Start"
         },
-        "audio": "Looping2"
+        "audio": "Looping"
     },
     "DAY1": {
         "bg": "Day1",
