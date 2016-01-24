@@ -1,0 +1,267 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="data-house">
+
+  <template>
+    <iron-ajax
+    auto
+    url="../../json/script.json"
+    params='{"alt":"json", "q":"chrome"}'
+    handle-as="json"
+    on-response="handleResponse"
+    debounce-duration="300"></iron-ajax>
+  </template>
+  
+  <script>
+    Polymer({
+      is: "data-house",
+      properties: {
+        script : {
+          type: Object
+        },
+        next : {
+          type: String,
+          observer: 'nextScene'
+        },
+        plotPoint : {
+          type: Object,
+          observer: 'plotPointStore'
+        },
+        plotPointArr: {
+          computed: "toArray(plotPoint)"
+        },
+        uniqueSelectionStore: {
+          type: Object
+        }
+      },
+
+      handleResponse: function(request) {
+          console.log("handleresponse");
+          console.log(request.detail.response);
+          this.script = request.detail.response;
+          this.next = "SPLASH"; //Change this to be dynamically the first object in the JSON load
+      },
+
+      toArray: function(obj) {
+        return Object.keys(obj).map(function(key) {
+          return {name: key, value: obj[key]};
+        });
+      },
+
+      plotPointStore: function() {
+          if(this.plotPoint != undefined)
+          {
+            if(localStorage.getItem(this.plotPointArr[0].name))
+            {
+              var tempArr = localStorage.getItem(this.plotPointArr[0].name);
+              localStorage.setItem(this.plotPointArr[0].name,JSON.stringify(tempArr.concat([this.plotPointArr[0].value]))); //fuck
+            }
+            else
+            {
+              localStorage.setItem(this.plotPointArr[0].name,JSON.stringify([this.plotPointArr[0].value]));
+            }
+          }
+      },
+
+      nextScene: function() {
+        console.log("Observed: " + this.next);
+
+        if(this.script[this.next].audio != undefined)
+        {
+          console.log("This scene has a: audio component");
+          document.querySelector('music-controller').audio = this.script[this.next].audio;
+        }
+
+        if(this.script[this.next].story != undefined)
+        {
+          console.log("This scene has a: story");
+          document.querySelector('text-block').story = this.script[this.next].story;
+        }
+        else
+        {
+          document.querySelector('text-block').story = "";
+        }
+
+        if(this.script[this.next].namePlate != undefined)
+        {
+          console.log("This scene has a: namePlate");
+          document.querySelector('name-plate').name = this.script[this.next].namePlate;
+        }
+        else
+        {
+          document.querySelector('name-plate').name = "";
+        }
+
+        if(this.script[this.next].bg != undefined)
+        {
+          console.log("This scene has a: bg");
+          document.querySelector('bg-stage').bg = this.script[this.next].bg;
+        }
+        else
+        {
+          document.querySelector('bg-stage').bg = "";
+        }
+
+        if(this.script[this.next].next != undefined)
+        {
+          console.log("This scene has a: next");
+          document.querySelector('select-box').next = this.script[this.next].next;
+        }
+        else
+        {
+          document.querySelector('select-box').next = ""; 
+        }
+
+        if(this.script[this.next].buttonText != undefined)
+        {
+          console.log("This scene has a: buttonText");
+          document.querySelector('select-box').text = this.script[this.next].buttonText;
+          document.querySelector('select-box').style.display = "block";
+        }
+        else
+        {
+          document.querySelector('select-box').text = "";
+          document.querySelector('select-box').style.display = "none";
+        }
+
+        if(this.script[this.next].beholderAnimation != undefined)
+        {
+          console.log("This scene has a: beholderAnimation");
+          document.querySelector('beholder-container').animation = this.script[this.next].beholderAnimation;
+        }
+        else
+        {
+          document.querySelector('beholder-container').animation = "noAnimation"; 
+        }
+
+        if(this.script[this.next].beholderPos != undefined)
+        {
+          console.log("This scene has a: beholderPos");
+          document.querySelector('beholder-container').pos = this.script[this.next].beholderPos;
+        }
+        else
+        {
+          document.querySelector('beholder-container').pos = "noPos"; 
+        }
+
+        if(this.script[this.next].beholderExp != undefined)
+        {
+          console.log("This scene has a: beholderExp");
+          document.querySelector('beholder-container').exp = this.script[this.next].beholderExp;
+        }
+        else
+        {
+          document.querySelector('beholder-container').exp = "neutral"; 
+        }
+
+        if(this.script[this.next].beholder != undefined)
+        {
+          console.log("This scene has a: beholder");
+          document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
+          document.querySelector('beholder-container').beholderContext = this.next;
+        }
+        else
+        {
+          document.querySelector('beholder-container').beholder = "blank"; 
+        }
+
+        if(this.script[this.next].selection != undefined)
+        {
+          console.log("This scene has a: selection");
+          document.querySelector('multi-selector').selections = this.script[this.next].selection;
+          document.getElementById("selection_ul").style.display = "block";
+        }
+        else
+        {
+          document.querySelector('multi-selector').selections = undefined;
+          document.getElementById("selection_ul").style.display = "none";
+        }
+
+        if(this.script[this.next].uniqueSelection != undefined)
+        {
+          console.log("This scene has a: uniqueSelection");
+          document.querySelector('multi-selector').uniqueSelection = this.script[this.next].uniqueSelection;
+        }
+        else
+        {
+          document.querySelector('multi-selector').uniqueSelection = "";
+        }
+
+        if(this.script[this.next].plotPoint != undefined)
+        {
+          console.log("This scene has a: plotPoint");
+          document.querySelector('data-house').plotPoint = this.script[this.next].plotPoint;
+        }
+        else
+        {
+          document.querySelector('data-house').plotPoint = undefined;
+        }
+
+        if(this.script[this.next].conditionalSelection != undefined)
+        {
+          console.log("This scene has a: conditionalSelection");
+          document.querySelector('multi-selector').conditionalSelection = this.script[this.next].conditionalSelection;
+        }
+        else
+        {
+          document.querySelector('multi-selector').conditionalSelection = {};
+        }
+
+        if(this.script[this.next].textEntry != undefined)
+        {
+          console.log("This scene has a: textEntry");
+          document.querySelector('text-entry').textSubmit = this.script[this.next].textEntry;
+          document.querySelector('text-entry').style.display = "block";
+        }
+        else
+        {
+          document.querySelector('text-entry').textSubmit = undefined;
+          document.querySelector('text-entry').style.display = "none";
+        }
+
+        if(this.script[this.next].conditionalStory != undefined)
+        {
+          console.log("This scene has a: conditionalStory");
+          var cStory = this.script[this.next].conditionalStory;
+          if(localStorage.getItem(Object.keys(cStory.condition)[0]) == cStory.condition[Object.keys(cStory.condition)[0]])
+          {
+            document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionTrue.item;
+            document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionTrue.story;
+            document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionTrue.buttonText;
+            document.querySelector('select-box').next = this.script[this.next].conditionalStory.ifConditionTrue.next;
+            document.querySelector('select-box').style.display = "block";
+          }
+          else
+          {
+            document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionFalse.item;
+            document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionFalse.story;
+            document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionFalse.buttonText;
+            document.querySelector('select-box').next = this.script[this.next].conditionalStory.ifConditionFalse.next;
+            document.querySelector('select-box').style.display = "block";
+          }
+          
+        }
+      },
+
+      ready : function() {
+        //var testArray = JSON.stringify(["Pick up your tray and sit with Bethelzed.", "Pick up your tray and sit with Siriak the Rapid."]);
+        localStorage.clear();
+        //localStorage.setItem('playerName', 'Justin'); //this is teporary until I get a playerName screen
+        //localStorage.setItem('mox-kick', 'known');
+        //localStorage.setItem('mox-gym', 'true');
+        //localStorage.setItem('purchase', 'Electronic Music Compilation'); //mox
+        //localStorage.setItem("beth-class","true");
+        //localStorage.setItem("beth-studied", "true");
+        //localStorage.setItem("purchase", "Dating-Sim Walkthrough"); //beth
+        //localStorage.setItem("siri-smoked", "true");
+        //localStorage.setItem("siri-ditched", "true");
+        //localStorage.setItem("purchase", "Fuzzy Dice"); //siri
+        //localStorage.setItem('purchase', 'Fart'); //failure
+      },
+      
+    });
+    
+    
+  </script>
+</dom-module>

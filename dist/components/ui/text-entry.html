@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="text-entry">
+
+  <template>
+    <p class="quickFix">Player Name: </p><input type="text" name="xx" id="playerName"><button on-click="buttonClick">{{textSubmit.buttonText}}</button>
+  </template>
+
+  <script>
+    Polymer({
+      is: "text-entry",
+      properties: {
+        textSubmit: {
+          type: Object
+        }
+      },
+      buttonClick: function(event, detail, sender) {
+          var playerNameInput = document.getElementById("playerName").value;
+          localStorage.setItem("playerName", playerNameInput);
+          document.querySelector('data-house').next = this.textSubmit.next;
+      },
+      ready : function() {
+      }
+    });
+  </script>
+  <!--
+  text-entry API
+  
+  textSubmit:
+    Field name gets read and is key to value entered
+
+  -->
+</dom-module>

@@ -1,0 +1,94 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="beholder-container">
+
+	<template>
+		<img src="{{expImg}}">
+	</template>
+
+	<script>
+	Polymer({
+	  is: "beholder-container",
+	  properties: {
+	    beholder: {
+	    	type: String,
+	    	value: "blank"
+	    },
+	    exp: {
+			type: String,
+			value: "neutral"
+	    },
+	    expImg: {
+			type: String,
+			computed: "buildImg(beholder, exp)" //calls the buildImg function and concats img path and {{exp}} value
+	    },
+	    pos: {
+			type: String
+	    },
+	    animation: {
+			type: String
+	    },
+	    beholderContext: {
+	    	type: String,
+	    	observer: "rebuildClasses"
+	    }
+	  },
+	  
+	  buildImg : function(beholder, exp) {
+	    return "images/char/"+beholder+"/"+beholder+"-"+ exp +".png";
+	  },
+
+	  rebuildClasses : function()
+	  {
+	  	var tempAnimation = this.animation;
+	  	var tempPos = this.pos;
+	  	document.querySelector('beholder-container').classList.remove("char");
+	  	document.querySelector('beholder-container').classList.remove("animated");
+	  	document.querySelector('beholder-container').classList.remove("tempPos");
+	  	document.querySelector('beholder-container').classList.remove("tempAnimation");
+	  	document.querySelector('beholder-container').classList.add("char");
+	    document.querySelector('beholder-container').classList.add("animated");
+	  	document.querySelector('beholder-container').classList.add(tempPos);
+	    document.querySelector('beholder-container').classList.add(tempAnimation);
+	    setTimeout(function(){
+	    	document.querySelector('beholder-container').classList.remove(tempAnimation); // This is a really gross way of resetting animations. FUCK
+	    }, 850);
+	  },
+
+	  ready : function() {
+	  }
+	});
+	</script>
+	<!--
+	Beholder API
+	mox:
+		exp:
+			angry
+			happy
+			neutral (default if no value)
+			shy
+	beth:
+		exp:
+			angry
+			happy
+			neutral (default if no value)
+			shy
+	siri:
+		exp:
+			angry1
+			angry2
+			happy
+			neutral (default if no value)
+			shy
+	pos:
+	center
+	right
+	left
+
+	animation:
+	fadeIn
+	fadeInRight
+	fadeInLeft
+
+	-->
+</dom-module>

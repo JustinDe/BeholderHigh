@@ -1,0 +1,39 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="select-box">
+
+  <template>
+   <span on-click="buttonClick">{{text}}</span>
+   </template>
+  <script>
+    Polymer({
+      is: "select-box",
+      properties: {
+        text: {
+          type: String,
+          value: "Button Default"
+        },
+        next: {
+          type: String,
+          value: ""
+        }
+      },
+      buttonClick: function(event, detail, sender) {
+           document.querySelector('data-house').next = this.next;
+      },
+      ready : function() {
+        document.querySelector('select-box').classList.add("next");
+      }
+    });
+  </script>
+  <!--
+  select-box API
+  
+  text:
+    Free text for what ever is fed in from the story.
+
+  next:
+    feeds what the next connection will be
+
+  -->
+</dom-module>

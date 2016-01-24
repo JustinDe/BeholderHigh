@@ -1,14 +1,18 @@
 Rewriting Beholder High as a polymer app
 
 To-Do:
+* Rewrite localstorage dependancy to use data house
 * Set user name
-* Dynamically start at first itm in json
+* Preload frame
 * New background images
-* Hook in Steroids
-* Style - Mobile only?
-* Clean up weird indentations - lint? (can you do that with polymer?)
+* Reconnect resources shared by BH and steroids
+* Style - Mobile only
+* Clean up weird indentations
 * QA
-* branch
+
+Bug:
+* Conditional Lunchroom scene erroring
+* Selector options placed weirdly
 
 Wish List:
 * Grunt build

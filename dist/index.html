@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    supersonic.app.splashscreen.hide();
+  });
+  </script>
+	<meta charset="UTF-8">
+	<title>Beholder High</title>
+	
+	<!-- Style Import -->
+	<link rel="stylesheet" type="text/css" href="css/pure.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    
+    <!-- Polyfill Web Components support for older browsers -->
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+	<!-- Import Data -->
+	<link rel="import" href="components/data/data-house.html">
+
+	<!-- Import Charactar -->
+	<link rel="import" href="components/characters/beholder.html">
+
+	<!-- Import Environments -->
+	<link rel="import" href="components/ui/bg-stage.html">
+	<link rel="import" href="components/ui/text-block.html">
+	<link rel="import" href="components/ui/select-box.html">
+	<link rel="import" href="components/ui/multi-selector.html">
+	<link rel="import" href="components/ui/name-plate.html">
+	<link rel="import" href="components/ui/text-entry.html">
+
+	<!-- Steroids Requirements -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="/components/supersonic/css/supersonic.css">
+    <!-- <link rel="stylesheet" href="/stylesheets/application.css"> -->
+    <link rel="import" href="/components/supersonic/components/import.html">
+
+    <script src="http://localhost/cordova.js"></script>
+    <script src="/components/steroids-js/steroids.js"></script>
+    <script src="/components/angular/angular.js"></script>
+    <script src="/components/supersonic/supersonic.js"></script>
+    <!--<script src="/components/webcomponentsjs/webcomponents.js"></script>-->
+
+    <script src="/scripts/application.js"></script>
+</head>
+<body ng-app="SteroidsApplication">
+	<data-house></data-house> <!-- This object does not neet styling -->
+	<bg-stage></bg-stage>
+	<beholder-container></beholder-container>
+	<div class="textArea">
+		<center><span><text-entry></text-entry></span></center>
+		<div class="leftCol">
+			<name-plate></name-plate>
+			<text-block></text-block>
+		</div>
+		<div class="rightCol">
+			<select-box></select-box>
+		</div>
+		<multi-selector class="pure-menu pure-menu-horizontal pure-menu-scrollable"></multi-selector>	
+	</div>
+	
+</body>
+</html>
