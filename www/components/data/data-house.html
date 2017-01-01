@@ -41,6 +41,7 @@
           console.log(request.detail.response);
           this.script = request.detail.response;
           this.next = "SPLASH"; //Change this to be dynamically the first object in the JSON load
+          // this.next = "D1S204";
       },
 
       toArray: function(obj) {
@@ -160,10 +161,12 @@
           console.log("This scene has a: beholder");
           document.querySelector('beholder-container').beholder = this.script[this.next].beholder;
           document.querySelector('beholder-container').beholderContext = this.next;
+          document.querySelector('beholder-container').style.display = "block";
         }
         else
         {
           document.querySelector('beholder-container').beholder = "blank"; 
+          document.querySelector('beholder-container').style.display = "hidden";
         }
 
         if(this.script[this.next].selection != undefined)

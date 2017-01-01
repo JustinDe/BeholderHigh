@@ -5,11 +5,12 @@
             "key": "playerName",
             "next": "DAY1",
             "buttonText": "Start"
-        }
+        },
+        "audio": "Looping"
     },
     "DAY1": {
         "bg": "Day1",
-        "next": "D1S102",
+        "next": "D1S100",
         "buttonText": "Next"
     },
     "D1S100": {

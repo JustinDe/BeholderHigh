@@ -30,6 +30,7 @@
 	<link rel="import" href="components/ui/multi-selector.html">
 	<link rel="import" href="components/ui/name-plate.html">
 	<link rel="import" href="components/ui/text-entry.html">
+	<link rel="import" href="components/ui/music-controller.html">
 
 	<!-- Steroids Requirements -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -47,18 +48,15 @@
     <script src="/scripts/application.js"></script>
 </head>
 <body ng-app="SteroidsApplication">
-	<data-house></data-house> <!-- This object does not neet styling -->
+	<data-house></data-house> <!-- This object does not need styling -->
+	<music-controller></music-controller> <!-- This object does not need styling -->
 	<bg-stage></bg-stage>
 	<beholder-container></beholder-container>
 	<div class="textArea">
 		<center><span><text-entry></text-entry></span></center>
-		<div class="leftCol">
-			<name-plate></name-plate>
-			<text-block></text-block>
-		</div>
-		<div class="rightCol">
-			<select-box></select-box>
-		</div>
+		<name-plate></name-plate>
+		<text-block></text-block>
+		<select-box></select-box>
 		<multi-selector class="pure-menu pure-menu-horizontal pure-menu-scrollable"></multi-selector>	
 	</div>
 	
