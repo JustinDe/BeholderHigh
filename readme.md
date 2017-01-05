@@ -2,19 +2,18 @@ Rewriting Beholder High as a polymer app
 
 To-Do:
 * Rewrite localstorage dependancy to use data house
-* Set user name
 * Preload frame
 * New background images
-* Reconnect resources shared by BH and steroids
-* Style - Mobile only
+* Click anywhere to advance story if not selector
 * Clean up weird indentations
-* QA
+* Clean up UI
+* QA Story
+* QA UI
 
 Bug:
 * Conditional Lunchroom scene erroring
 * Selector options placed weirdly
 
 Wish List:
-* Grunt build
 * JSON Linter
 * Visualizer

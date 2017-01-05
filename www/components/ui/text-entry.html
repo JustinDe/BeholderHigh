@@ -3,7 +3,9 @@
 <dom-module id="text-entry">
 
   <template>
-    <p class="quickFix">Player Name: </p><input type="text" name="xx" id="playerName"><button on-click="buttonClick">{{textSubmit.buttonText}}</button>
+    <div class="playerNameLeft">&nbsp;</div>
+    <div class="playerNameInput"><input class="ghost-input" type="text" name="xx" id="playerName"></div>
+    <div class="playerNameButton"><button class="ghost-button" on-click="buttonClick">{{textSubmit.buttonText}}</button></div>
   </template>
 
   <script>
