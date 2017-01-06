@@ -26,7 +26,7 @@
       },
 
       filtron: function(story) {
-        story = story.replace(":name:", localStorage.getItem('playerName'));
+        story = story.replace(":name:", document.querySelector('data-house').playerName);
         story = story.replace(":item:", localStorage.getItem(this.item));
         return story
       },

@@ -4,6 +4,7 @@ body
     font-family: 'Coming Soon', cursive;
     line-height: 1.4;
     background:#000000;
+    overflow: hidden;
 }
 bg-stage img
 {
@@ -166,4 +167,9 @@ music-controller
 {
     float: left;
     width: 18.4%;
+}
+
+.bg-max
+{
+    background-size: 100%;
 }

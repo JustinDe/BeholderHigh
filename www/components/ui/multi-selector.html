@@ -65,17 +65,6 @@
             tempUniqueSelectionStore[this.uniqueSelectionArr[0].name] = [this.uniqueSelectionArr[0].value];
             document.querySelector('data-house').uniqueSelectionStore = tempUniqueSelectionStore;
           }
-
-          //Dear god whyyyyy
-          // if(localStorage.getItem(this.uniqueSelectionArr[0].name))
-          // {
-          //   var tempArr = localStorage.getItem(this.uniqueSelectionArr[0].name);
-          //   localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify(tempArr.concat([this.uniqueSelectionArr[0].value]))); //fuck
-          // }
-          // else
-          // {
-          //   localStorage.setItem(this.uniqueSelectionArr[0].name,JSON.stringify([this.uniqueSelectionArr[0].value]));
-          // }
         }
         document.querySelector('multi-selector').style.display = "none";
         document.querySelector('data-house').next = this.selections[event.target.innerHTML];

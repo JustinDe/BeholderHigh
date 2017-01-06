@@ -18,7 +18,7 @@
       },
       buttonClick: function(event, detail, sender) {
           var playerNameInput = document.getElementById("playerName").value;
-          localStorage.setItem("playerName", playerNameInput);
+          document.querySelector('data-house').playerName = playerNameInput
           document.querySelector('data-house').next = this.textSubmit.next;
       },
       ready : function() {

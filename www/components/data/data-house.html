@@ -33,6 +33,9 @@
         },
         uniqueSelectionStore: {
           type: Object
+        },
+        playerName: {
+          type: String
         }
       },
 
@@ -248,19 +251,7 @@
       },
 
       ready : function() {
-        //var testArray = JSON.stringify(["Pick up your tray and sit with Bethelzed.", "Pick up your tray and sit with Siriak the Rapid."]);
         localStorage.clear();
-        //localStorage.setItem('playerName', 'Justin'); //this is teporary until I get a playerName screen
-        //localStorage.setItem('mox-kick', 'known');
-        //localStorage.setItem('mox-gym', 'true');
-        //localStorage.setItem('purchase', 'Electronic Music Compilation'); //mox
-        //localStorage.setItem("beth-class","true");
-        //localStorage.setItem("beth-studied", "true");
-        //localStorage.setItem("purchase", "Dating-Sim Walkthrough"); //beth
-        //localStorage.setItem("siri-smoked", "true");
-        //localStorage.setItem("siri-ditched", "true");
-        //localStorage.setItem("purchase", "Fuzzy Dice"); //siri
-        //localStorage.setItem('purchase', 'Fart'); //failure
       },
       
     });
