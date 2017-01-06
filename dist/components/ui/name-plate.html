@@ -21,8 +21,7 @@
       },
 
       filtron: function(name) {
-        name = name.replace(":name:", localStorage.getItem('playerName'));
-        return name
+        return name.replace(":name:", document.querySelector('data-house').playerName);
       },
 
       ready : function() {

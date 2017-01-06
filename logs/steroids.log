@@ -1115,3 +1115,9 @@
 {"datetime":1483302802210,"view":"http://localhost/index.html","host":"192.168.1.101:4567","device":"iPad","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2017-01-01T20:33:25.826Z"}
 {"datetime":"2017-01-01T20:33:30.401Z","view":"http://localhost/index.html","host":"192.168.1.101:4567","level":"info","message":"\"Uncaught TypeError: Cannot convert undefined or null to object - undefined:undefined\"","timestamp":"2017-01-01T20:33:32.423Z"}
 {"datetime":"2017-01-01T20:34:00.479Z","view":"http://localhost/index.html","host":"192.168.1.101:4567","level":"info","message":"\"Uncaught TypeError: Cannot convert undefined or null to object - undefined:undefined\"","timestamp":"2017-01-01T20:34:02.472Z"}
+{"datetime":1483680256716,"view":"http://localhost/index.html","host":"192.168.1.102:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2017-01-06T05:24:18.754Z"}
+{"datetime":1483680256900,"view":"http://localhost/index.html","host":"192.168.1.102:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2017-01-06T05:24:18.755Z"}
+{"datetime":1483680340047,"view":"http://localhost/index.html","host":"192.168.1.102:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2017-01-06T05:25:41.810Z"}
+{"datetime":1483680340100,"view":"http://localhost/index.html","host":"192.168.1.102:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2017-01-06T05:25:41.902Z"}
+{"datetime":1483680741189,"view":"http://localhost/index.html","host":"192.168.1.102:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide called\"","timestamp":"2017-01-06T05:32:23.032Z"}
+{"datetime":1483680741242,"view":"http://localhost/index.html","host":"192.168.1.102:4567","level":"debug","message":"\"supersonic.app.splashscreen.hide resolved\"","timestamp":"2017-01-06T05:32:23.035Z"}

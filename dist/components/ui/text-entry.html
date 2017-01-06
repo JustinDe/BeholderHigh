@@ -3,7 +3,9 @@
 <dom-module id="text-entry">
 
   <template>
-    <p class="quickFix">Player Name: </p><input type="text" name="xx" id="playerName"><button on-click="buttonClick">{{textSubmit.buttonText}}</button>
+    <div class="playerNameLeft">&nbsp;</div>
+    <div class="playerNameInput"><input class="ghost-input" type="text" name="xx" id="playerName" placeholder="Name"></div>
+    <div class="playerNameButton"><button class="ghost-button" on-click="buttonClick">{{textSubmit.buttonText}}</button></div>
   </template>
 
   <script>
@@ -16,7 +18,7 @@
       },
       buttonClick: function(event, detail, sender) {
           var playerNameInput = document.getElementById("playerName").value;
-          localStorage.setItem("playerName", playerNameInput);
+          document.querySelector('data-house').playerName = playerNameInput
           document.querySelector('data-house').next = this.textSubmit.next;
       },
       ready : function() {
