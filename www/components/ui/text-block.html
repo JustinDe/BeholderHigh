@@ -27,7 +27,7 @@
 
       filtron: function(story) {
         story = story.replace(":name:", document.querySelector('data-house').playerName);
-        story = story.replace(":item:", localStorage.getItem(this.item));
+        story = story.replace(":item:", document.querySelector('data-house').plotPointStorage['purchase']);
         return story
       },
 

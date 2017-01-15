@@ -74,7 +74,6 @@
         //console.log(selectionsKeys);
         if(uniqueSelection) // will always be true and will cause null -- fix this later maybe with t/f
         {
-          //var itmsToFilter = JSON.parse(localStorage.getItem(this.uniqueSelectionArr[0].name));
           var itmsToFilter = document.querySelector('data-house').uniqueSelectionStore[this.uniqueSelectionArr[0].name];
           for(var i = 0; i < itmsToFilter.length; i++)
           {
@@ -105,7 +104,9 @@
           var constantKeysArr = Object.keys(cSelection.constants);
           var ifConditionTrueKeysArr = Object.keys(cSelection.ifConditionTrue);
           var outPutOptions = constantKeysArr;
-          if(localStorage.getItem(conditionKey) == conditionValue)
+          var plotStorage = document.querySelector('data-house').plotPointStorage
+
+          if(plotStorage[conditionKey] == conditionValue)
           {
             for(var i = 0; i < ifConditionTrueKeysArr.length; i++)
             {

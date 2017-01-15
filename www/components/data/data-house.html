@@ -28,8 +28,8 @@
           type: Object,
           observer: 'plotPointStore'
         },
-        plotPointArr: {
-          computed: "toArray(plotPoint)"
+        plotPointStorage : {
+          type: Object
         },
         uniqueSelectionStore: {
           type: Object
@@ -43,29 +43,47 @@
           console.log("handleresponse");
           console.log(request.detail.response);
           this.script = request.detail.response;
-          this.next = "SPLASH"; //Change this to be dynamically the first object in the JSON load
-          // this.next = "D1S204";
-      },
+          this.plotPointStorage = {init: "plotStorage"}                            // Inits plotPointStorage object in Polymer
 
-      toArray: function(obj) {
-        return Object.keys(obj).map(function(key) {
-          return {name: key, value: obj[key]};
-        });
+          this.next = "SPLASH";
+
+          testingData = "B";
+
+          if(testingData == "M") {
+            this.playerName = "Patrick Bateman";
+            // Mox Testing Data
+            this.plotPointStorage['mox-kick'] = 'known';                             // "mox-kick": "known"
+            this.plotPointStorage['mox-gym']  = 'true';                              // "mox-gym" : "true"
+            this.plotPointStorage['purchase'] = 'Electronic Music Compilation';      // "purchase": "Electronic Music Compilation"
+            this.next = "M00";
+          }
+
+          if(testingData == "B") {
+            this.playerName = "Patrick Bateman";
+            // Beth Testing Data
+            this.plotPointStorage['beth-class']    = 'true';
+            this.plotPointStorage['beth-studied']  = 'true';
+            this.plotPointStorage['purchase']      = 'Dating-Sim Walkthrough';
+            this.next = "B00";
+          }
+
+          if(testingData == "S") {
+            this.playerName = "Patrick Bateman";
+            // Siri Testing Data
+            this.plotPointStorage['siri-ditched'] = 'true';
+            this.plotPointStorage['siri-smoked']  = 'true';
+            this.plotPointStorage['purchase']     = 'Fuzzy Dice';
+            this.next = "S00";
+          }
+          
       },
 
       plotPointStore: function() {
           if(this.plotPoint != undefined)
           {
-            if(localStorage.getItem(this.plotPointArr[0].name))
-            {
-              var tempArr = localStorage.getItem(this.plotPointArr[0].name);
-              localStorage.setItem(this.plotPointArr[0].name,JSON.stringify(tempArr.concat([this.plotPointArr[0].value]))); //fuck
-            }
-            else
-            {
-              localStorage.setItem(this.plotPointArr[0].name,JSON.stringify([this.plotPointArr[0].value]));
-            }
+            this.plotPointStorage[Object.keys(this.plotPoint)[0]] = this.plotPoint[Object.keys(this.plotPoint)[0]];
           }
+          
       },
 
       nextScene: function() {
@@ -229,9 +247,11 @@
         if(this.script[this.next].conditionalStory != undefined)
         {
           console.log("This scene has a: conditionalStory");
+          console.log(this.plotPointStorage);
           var cStory = this.script[this.next].conditionalStory;
-          if(localStorage.getItem(Object.keys(cStory.condition)[0]) == cStory.condition[Object.keys(cStory.condition)[0]])
+          if(this.plotPointStorage[Object.keys(cStory.condition)[0]] == cStory.condition[Object.keys(cStory.condition)[0]])
           {
+            console.log("+++++++++ CONDITION MET");
             document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionTrue.item;
             document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionTrue.story;
             document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionTrue.buttonText;
@@ -240,6 +260,7 @@
           }
           else
           {
+            console.log("+++++++++ CONDITION FAILED");
             document.querySelector('text-block').item = this.script[this.next].conditionalStory.ifConditionFalse.item;
             document.querySelector('text-block').story = this.script[this.next].conditionalStory.ifConditionFalse.story;
             document.querySelector('select-box').text = this.script[this.next].conditionalStory.ifConditionFalse.buttonText;
@@ -251,7 +272,6 @@
       },
 
       ready : function() {
-        localStorage.clear();
       },
       
     });
